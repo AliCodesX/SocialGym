@@ -41,7 +41,7 @@ export default function NavbarComponent() {
     ];
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen}>
+        <Navbar  onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -55,12 +55,17 @@ export default function NavbarComponent() {
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem>
+                    <Link color="foreground" href="/">
+                        Home
+                    </Link>
+                </NavbarItem>
+                <NavbarItem>
                     <Link color="foreground" href="#">
                         Über uns
                     </Link>
                 </NavbarItem>
                 <NavbarItem isActive>
-                    <Link aria-current="page" href="#">
+                    <Link className="text-lakers" aria-current="page" href="#">
                         Trainingsplan
                     </Link>
                 </NavbarItem>
@@ -72,10 +77,10 @@ export default function NavbarComponent() {
             </NavbarContent>
             <NavbarContent justify="end">
                 <NavbarItem className="hidden lg:flex">
-                    <Link href="#">Spenden</Link>
+                    <Link className="text-lakers font-bold" href="#">Spenden</Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Button as={Link} color="primary" href="#" variant="flat">
+                    <Button as={Link} className="bg-lakers font-bold drop-shadow-md " href="#" variant="flat">
                         Mitglied werden
                     </Button>
                 </NavbarItem>

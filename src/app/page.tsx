@@ -4,6 +4,7 @@ import Hero from "@/app/Components/Hero";
 import { Button, Link } from "@heroui/react";
 import React from "react";
 import Image from "next/image";
+import Footer from "@/app/Components/Footer";
 
 export default function Home() {
     return (
@@ -35,6 +36,7 @@ export default function Home() {
 
                 </div>
             </div>
+
         </div>
     );
 }

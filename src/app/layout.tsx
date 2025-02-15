@@ -5,6 +5,7 @@ import {HeroUIProvider} from "@heroui/react";
 
 import "./globals.css";
 import NavbarComponent from "@/app/Components/Navbar";
+import Footer from "@/app/Components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             {children}
         </HeroUIProvider>
         </body>
+        <Footer />
         </html>
     );
 }

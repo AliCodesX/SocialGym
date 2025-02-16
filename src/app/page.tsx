@@ -1,17 +1,38 @@
 'use client'
 
 import Hero from "@/app/Components/Hero";
-import { Button, Link } from "@heroui/react";
+import { Button } from "@heroui/react";
 import React from "react";
 import Image from "next/image";
-import Footer from "@/app/Components/Footer";
 import CardGridItem from "@/app/Components/CardGridItem";
 
+
 export default function Home() {
+    const CardItemData = [ {
+        image: "/ringen1.png",
+        title: "SocialGym",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+    },
+    {
+        image: "/ringen2.png",
+        title: "SocialGym",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+    },
+    {
+        image: "/ringen3.png",
+        title: "SocialGym",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+    },
+    {
+        image: "/ringen4.png",
+        title: "SocialGym",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+    }
+
+    ]
     return (
         <div>
             <Hero />
-
             <div className="flex justify-center ">
                 <div className=" flex flex-col md:flex-row gap-4 justify-center items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
                     <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
@@ -39,9 +60,8 @@ export default function Home() {
             </div>
             <div className="flex justify-center">
                 <h1 className="text center text-4xl font-bold">Upcoming Events</h1>
-
             </div>
-            <CardGridItem></CardGridItem>
+            <CardGridItem items={CardItemData} />
 
         </div>
     );

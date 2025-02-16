@@ -8,7 +8,7 @@ const CardItemData = [
     {
         image: "https://heroui.com/images/hero-card-complete.jpeg",
         title: "Wrestle",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicin"
+        description: "Lorem ipsum dolor sit amet, consectetur adipisic"
     },
     {
         image: "https://heroui.com/images/hero-card-complete.jpeg",
@@ -26,12 +26,9 @@ const CardItemData = [
         description: "Lorem ipsum dolor sit amet, consectetur adipisicin"
     }
 ]
-
     return (
-
-
         <div className="flex justify-center mt-10">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-5">
                 {CardItemData.map((item, index) => (
                     <CardItem
                         key={index}

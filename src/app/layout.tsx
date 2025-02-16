@@ -27,9 +27,11 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
         <HeroUIProvider>
             <NavbarComponent />
             {children}
+            <Footer />
+
         </HeroUIProvider>
         </body>
-        <Footer />
+
         </html>
     );
 }

@@ -5,6 +5,7 @@ import { Button, Link } from "@heroui/react";
 import React from "react";
 import Image from "next/image";
 import Footer from "@/app/Components/Footer";
+import CardGridItem from "@/app/Components/CardGridItem";
 
 export default function Home() {
     return (
@@ -36,6 +37,11 @@ export default function Home() {
 
                 </div>
             </div>
+            <div className="flex justify-center">
+                <h1 className="text center text-4xl font-bold">Upcoming Events</h1>
+
+            </div>
+            <CardGridItem></CardGridItem>
 
         </div>
     );

@@ -55,7 +55,6 @@ export default function Home() {
                     <div className="flex-shrink-0 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px]">
                         <Image src="/wrestle.png" alt="wrestle" width={300} height={300} />
                     </div>
-
                 </div>
             </div>
             <div className="flex justify-center">

@@ -33,7 +33,7 @@ export default function Home() {
     return (
         <div>
             <Hero />
-            <div className="flex justify-center ">
+            <div className="flex justify-center  ">
                 <div className=" flex flex-col md:flex-row gap-4 justify-center items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
                     <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
                         <h1 className="text-4xl font-bold">Unser Motto</h1>
@@ -59,7 +59,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex justify-center">
-                <h1 className="text center text-4xl font-bold">Upcoming Events</h1>
+                <h1 className="text center text-4xl font-bold  mt-20">Upcoming Events</h1>
             </div>
             <CardGridItem items={CardItemData} />
 

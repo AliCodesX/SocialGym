@@ -41,7 +41,7 @@ export default function NavbarComponent() {
     ];
 
     return (
-        <Navbar  onMenuOpenChange={setIsMenuOpen}>
+        <Navbar shouldHideOnScroll className="bg-white" onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}

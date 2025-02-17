@@ -3,6 +3,12 @@ import React from "react";
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
 
+export interface HomeProps {
+    image ?: string
+    title ?: string
+}
+
+
 const Hero = () => {
     return (
         <div className="relative w-full h-screen flex items-center justify-center opacity-92">

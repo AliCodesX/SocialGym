@@ -1,16 +1,40 @@
 'use client'
 import React from 'react'
-import Hero from "@/app/Components/Hero";
 import HeroAbout from "@/app/Components/AboutHero";
-import {Button} from "@heroui/react";
 import Image from "next/image";
+import {Typewriter} from "react-simple-typewriter";
+import CardGridItem from "@/app/Components/CardGridItem";
+import CardGridItemCoach from "@/app/Components/CardGridItemCoach";
+
 
 const Page = () => {
+
+    const CardItemData = [ {
+        image: "/coach1.jpg",
+        title: "Trainer 1",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+    },
+        {
+            image: "/coach2.jpeg",
+            title: "Trainer2",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+        },
+        {
+            image: "/coach3.jpg",
+            title: "Trainer3",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+        },
+        {
+            image: "/coach4.jpg",
+            title: "Trainer4",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+        }
+
+    ]
 
     return (
         <div>
             <HeroAbout/>
-
             <div className="flex justify-center">
                 <div
                     className=" flex flex-col md:flex-row gap-10 justify-center items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
@@ -29,14 +53,26 @@ const Page = () => {
                             <br/>
                             Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
                         </p>
-
                     </div>
+                </div>
+            </div>
+            <div className="relative w-full h-screen flex items-center justify-center opacity-92">
+                <Image
+                    src="/gymbackground.jpeg"
+                    alt="Hero Background"
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100}
+                    className="absolute inset-0 -z-10"
+                />
+
+                <div className="absolute inset-0 bg-black bg-opacity-80"></div>
+
+                <div className="relative  flex flex-col items-center text-center">
+                    <CardGridItemCoach items={CardItemData} />
 
                 </div>
-
             </div>
-
-
         </div>
     )
 }

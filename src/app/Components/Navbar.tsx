@@ -65,7 +65,7 @@ export default function NavbarComponent() {
                     </Link>
                 </NavbarItem>
                 <NavbarItem isActive>
-                    <Link className="text-lakers" aria-current="page" href="/training">
+                    <Link className="text-black" aria-current="page" href="/training">
                         Trainingsplan
                     </Link>
                 </NavbarItem>
@@ -77,7 +77,7 @@ export default function NavbarComponent() {
             </NavbarContent>
             <NavbarContent justify="end">
                 <NavbarItem className="hidden lg:flex">
-                    <Link className="text-lakers font-bold" href="/">Spenden</Link>
+                    <Link className="text-black font-bold" href="/">Spenden</Link>
                 </NavbarItem>
                 <NavbarItem>
                     <Button as={Link} className="bg-lakers font-bold drop-shadow-md " href="#" variant="flat">

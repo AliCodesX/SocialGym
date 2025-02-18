@@ -16,17 +16,17 @@ const Page = () => {
     },
         {
             image: "/coach2.jpeg",
-            title: "Trainer2",
+            title: "Trainer 2",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
         },
         {
             image: "/coach3.jpg",
-            title: "Trainer3",
+            title: "Trainer 3",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
         },
         {
             image: "/coach4.jpg",
-            title: "Trainer4",
+            title: "Trainer 4",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
         }
 

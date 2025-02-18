@@ -14,7 +14,7 @@ export interface CardGridItemProps {
 const CardGridItem = ({ items }: CardGridItemProps) => {
     return (
         <div className="flex justify-center mt-10">
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-10">
                 {items.map((item, index) => (
                     <CardItemDark
                         key={index}

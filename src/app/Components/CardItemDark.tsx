@@ -10,8 +10,8 @@ export interface CardItemProps {
 
 export default function CardItemDark(props: CardItemProps) {
     return (
-        <Card isFooterBlurred  fullWidth={false} className="p-0 max-w-sm bg-black/50   ">
-            <CardBody className="overflow-visible py-0">
+        <Card isFooterBlurred fullWidth={true} className=" max-w-sm pb-3 m-0 bg-/50  ">
+            <CardBody className="overflow-visible p-0">
                 <Image
                     alt="Card background"
                     className="w-full object-cover  rounded-xl"
@@ -21,7 +21,8 @@ export default function CardItemDark(props: CardItemProps) {
                 />
             </CardBody>
 
-            <CardFooter className="pb-2 pt-2 px-4 flex-col items-start">
+
+            <CardFooter className="pb-2 p px-4 flex-col items-start">
                 <h4 className="font-bold text-large text-lakers">{props.title}</h4>
                 <small className=" text-left  text-white">
                     {props.description}

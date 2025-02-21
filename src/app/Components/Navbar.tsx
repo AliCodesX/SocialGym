@@ -41,7 +41,7 @@ export default function NavbarComponent() {
     ];
 
     return (
-        <Navbar shouldHideOnScroll className="bg-white" onMenuOpenChange={setIsMenuOpen}>
+        <Navbar  className="bg-white" onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -65,7 +65,7 @@ export default function NavbarComponent() {
                     </Link>
                 </NavbarItem>
                 <NavbarItem isActive>
-                    <Link className="text-black" aria-current="page" href="/training">
+                    <Link className="text-black" aria-current="page"  href="/about#training">
                         Trainingsplan
                     </Link>
                 </NavbarItem>

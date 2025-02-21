@@ -2,13 +2,48 @@
 import React from 'react'
 import HeroAbout from "@/app/Components/AboutHero";
 import Image from "next/image";
-import {Typewriter} from "react-simple-typewriter";
-import CardGridItem from "@/app/Components/CardGridItem";
 import CardGridItemCoach from "@/app/Components/CardGridItemCoach";
-
+import {  Table,  TableHeader,  TableBody,  TableColumn,  TableRow,  TableCell,getKeyValue} from "@heroui/table";
 
 const Page = () => {
 
+
+    const rows = [
+        {
+            key: "1",
+            wochentag: "Montag",
+            trainer: "Fahim",
+            ort: "Horn",
+        },
+        {
+            key: "2",
+            wochentag: "Mittwoch",
+            trainer: "Fawad",
+            ort: "Horn",
+        },
+        {
+            key: "3",
+            wochentag: "Freitag",
+            trainer: "Fahim",
+            ort: "Horn",
+        },
+
+    ];
+
+    const columns = [
+        {
+            key: "wochentag",
+            label: "WOCHENTAG",
+        },
+        {
+            key: "trainer",
+            label: "TRAINER",
+        },
+        {
+            key: "ort",
+            label: "ORT",
+        }
+    ];
     const CardItemData = [ {
         image: "/coach1.jpg",
         title: "Trainer 1",
@@ -29,7 +64,6 @@ const Page = () => {
             title: "Trainer 4",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
         }
-
     ]
 
     return (
@@ -134,6 +168,26 @@ const Page = () => {
                     </div>
                 </div>
             </div>
+
+            <h1 className="text-center text-4xl font-bold">Trainigsplan</h1>
+
+            <div className="flex justify-center">
+                <div className=" mt-5 w-[80%]" id="training">
+                    <Table aria-label="Example table with dynamic content">
+                        <TableHeader columns={columns}>
+                            {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+                        </TableHeader>
+                        <TableBody items={rows}>
+                            {(item) => (
+                                <TableRow key={item.key}>
+                                    {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+                                </TableRow>
+                            )}
+                        </TableBody>
+                    </Table>
+                </div>
+            </div>
+
         </div>
     )
 }

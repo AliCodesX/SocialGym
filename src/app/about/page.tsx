@@ -69,8 +69,69 @@ const Page = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-80"></div>
 
                 <div className="relative  flex flex-col items-center text-center">
-                    <CardGridItemCoach items={CardItemData} />
+                    <CardGridItemCoach items={CardItemData}/>
 
+                </div>
+            </div>
+            <div className="flex justify-center">
+                <div
+                    className=" flex flex-col md:flex-row gap-10 justify-center  items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
+                    <div className="flex justify-center items-center">
+                        <h1 className="text-4xl text-center font-bold "> Club's Philosophy</h1>
+                    </div>
+                    <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, distinctio doloribus
+                            <br/>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
+                            <br/>
+                            facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
+                            <br/>
+                            Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div className="flex justify-center bg-blue-700">
+                <div
+                    className="flex flex-col md:flex-row gap-10 justify-center items-center bg-blue-700 text-white md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
+                    <div className="flex justify-center items-center">
+                        <h1 className="text-4xl text-center font-bold "> Athletic integration</h1>
+                    </div>
+                    <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, distinctio doloribus
+                            <br/>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
+                            <br/>
+                            facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
+                            <br/>
+                            Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div className="flex justify-center">
+                <div
+                    className=" flex flex-col md:flex-row gap-10 justify-center items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
+                    <div className="flex justify-center items-center">
+                        <h1 className="text-4xl text-center font-bold ">Personal Development </h1>
+                    </div>
+                    <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, distinctio doloribus
+                            <br/>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
+                            <br/>
+                            facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
+                            <br/>
+                            Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
+                            <br/>
+                            facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
+                            <br/>
+                            Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import XIcon from '@mui/icons-material/X';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import {schema} from "@/Schemas/schema";
+import {InfiniteMovingCards} from "@/app/Components/ui/infiniteCards";
 
 const Page = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -32,7 +33,20 @@ const Page = () => {
             href: "#",
         },
     ];
-
+    const items = [
+        {
+          altText : "sky",
+          imageUrl: "skysport.png",
+        },
+        {
+          altText : "DRB",
+          imageUrl: "DRB-Logo.png",
+        },
+        {
+          altText : "eurosport",
+          imageUrl: "europsport.jpg",
+        },
+    ]
     const onSubmit = () => {
         console.log("Hello World");
     };
@@ -54,6 +68,10 @@ const Page = () => {
                 </Form>
                 <div>
                     <FloatingDock items={links} />
+                </div>
+                <div>
+                    <h1 className="text-4xl font-bold text-center mt-20">Unsere Partner</h1>
+                    <InfiniteMovingCards items={items}></InfiniteMovingCards>
                 </div>
             </div>
         </div>

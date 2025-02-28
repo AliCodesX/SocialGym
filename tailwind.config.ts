@@ -1,6 +1,13 @@
 import type { Config } from "tailwindcss";
 import {heroui} from "@heroui/react";
+const colors = require("tailwindcss/colors");
 
+
+
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,6 +17,17 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        scroll:
+            "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -20,3 +38,4 @@ export default {
   darkMode: "class",
   plugins: [heroui()],
 } satisfies Config;
+

@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/alializadeh/repository/socialGymWeb/src/app/contact/page.tsx"],"sourcesContent":["import React from \"react\";\nimport {useForm} from \"react-hook-form\";\nimport {Form, Input,  Checkbox, Button} from \"@heroui/react\";\nconst Page = () => {\n    const {register, handleSubmit} = useForm();\n\n    const onSubmit = () => {\n        console.log(\"Hello World\");\n    }\n    return (\n        <div>\n            <Form>\n                <Input placeholder=\"Name\" />\n                <Input placeholder=\"Email\" />\n                <Input placeholder=\"Message\" />\n                <Checkbox />\n                <Button type=\"submit\">Send</Button>\n            </Form>\n        </div>\n    )\n}\nexport default Page\n"],"names":[],"mappings":";;;;AACA;AACA;;;;AACA,MAAM,OAAO;IACT,MAAM,EAAC,QAAQ,EAAE,YAAY,EAAC,GAAG,CAAA,GAAA,wKAAA,CAAA,UAAO,AAAD;IAEvC,MAAM,WAAW;QACb,QAAQ,GAAG,CAAC;IAChB;IACA,qBACI,8OAAC;kBACG,cAAA,8OAAC,oKAAA,CAAA,OAAI;;8BACD,8OAAC,oKAAA,CAAA,QAAK;oBAAC,aAAY;;;;;;8BACnB,8OAAC,oKAAA,CAAA,QAAK;oBAAC,aAAY;;;;;;8BACnB,8OAAC,oKAAA,CAAA,QAAK;oBAAC,aAAY;;;;;;8BACnB,8OAAC,oKAAA,CAAA,WAAQ;;;;;8BACT,8OAAC,oKAAA,CAAA,SAAM;oBAAC,MAAK;8BAAS;;;;;;;;;;;;;;;;;AAItC;uCACe"}},
+    {"offset": {"line": 71, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 82, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 82, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

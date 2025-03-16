@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 interface Session {
@@ -13,7 +13,7 @@ interface SessionResponse {
     error?: string;
 }
 
-export default function SuccessPage() {
+const SuccessPageContent = () => {
     const [status, setStatus] = useState<string>('loading');
     const [customerEmail, setCustomerEmail] = useState<string>('');
     const searchParams = useSearchParams();
@@ -59,5 +59,13 @@ export default function SuccessPage() {
             <h1>Subscription Successful!</h1>
             <p>Thank you for your subscription. A confirmation email has been sent to {customerEmail}.</p>
         </div>
+    );
+};
+
+export default function SuccessPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <SuccessPageContent />
+        </Suspense>
     );
 }

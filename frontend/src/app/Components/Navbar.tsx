@@ -80,7 +80,7 @@ export default function NavbarComponent() {
                     <Link className="text-black font-bold" href="/">Spenden</Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Button as={Link} className="bg-lakers font-bold drop-shadow-md " href="/membership" variant="flat">
+                    <Button as={Link} className="bg-lakers font-bold drop-shadow-md " href="/subscriptions" variant="flat">
                         Mitglied werden
                     </Button>
                 </NavbarItem>

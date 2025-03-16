@@ -1,4 +1,4 @@
-import {Card, CardHeader, CardBody, Image, Button, Divider} from "@heroui/react";
+import {Card, CardBody, Image,} from "@heroui/react";
 import {CardFooter} from "@heroui/card";
 
 export interface CardItemProps {

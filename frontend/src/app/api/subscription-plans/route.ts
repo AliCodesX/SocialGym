@@ -15,17 +15,22 @@ export async function GET(): Promise<NextResponse> {
             type: 'recurring',
         });
 
-        const plans = prices.data.map((price: Stripe.Price) => {
-            const product = price.product as Stripe.Product;
-            return {
-                id: price.id,
-                name: product.name,
-                description: product.description,
-                price: price.unit_amount,
-                interval: price.recurring?.interval,
-                price_id: price.id,
-            };
-        });
+        const plans = prices.data
+            .filter(price => {
+                const product = price.product as Stripe.Product;
+                return product.active;
+            })
+            .map((price: Stripe.Price) => {
+                const product = price.product as Stripe.Product;
+                return {
+                    id: price.id,
+                    name: product.name,
+                    description: product.description,
+                    price: price.unit_amount,
+                    interval: price.recurring?.interval,
+                    price_id: price.id,
+                };
+            });
 
         return NextResponse.json(plans);
     } catch (error) {

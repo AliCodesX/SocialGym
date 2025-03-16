@@ -1,6 +1,5 @@
 
 import React from 'react';
-import CardItem from "@/app/Components/CardItem";
 import CardItemDark from "@/app/Components/CardItemDark";
 
 export interface CardGridItemProps {

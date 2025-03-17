@@ -27,18 +27,6 @@ export const AcmeLogo = () => {
 export default function NavbarComponent() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-    const menuItems = [
-        "Profile",
-        "Dashboard",
-        "Activity",
-        "Analytics",
-        "System",
-        "Deployments",
-        "My Settings",
-        "Team Settings",
-        "Help & Feedback",
-        "Log Out",
-    ];
 
     return (
         <Navbar  className="bg-white" onMenuOpenChange={setIsMenuOpen}>
@@ -86,20 +74,28 @@ export default function NavbarComponent() {
                 </NavbarItem>
             </NavbarContent>
             <NavbarMenu>
-                {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`}>
-                        <Link
-                            className="w-full"
-                            color={
-                                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-                            }
-                            href="#"
-                            size="lg"
-                        >
-                            {item}
-                        </Link>
-                    </NavbarMenuItem>
-                ))}
+                <NavbarMenuItem className="sm:hidden ">
+                    <Link className="text-white" href="/">
+                        Home
+                    </Link>
+                </NavbarMenuItem>
+                <NavbarMenuItem className="sm:hidden">
+                    <Link className="text-white" href="/about">
+                        Über uns
+                    </Link>
+                </NavbarMenuItem>
+                <NavbarMenuItem className="sm:hidden">
+                    <Link className="text-white" href="/contact">
+                        Kontakt
+                    </Link>
+                </NavbarMenuItem>
+                <NavbarMenuItem className="sm:hidden">
+                    <Link className="text-white" href="/">
+                        Spenden
+                    </Link>
+                </NavbarMenuItem>
+
+
             </NavbarMenu>
         </Navbar>
     );

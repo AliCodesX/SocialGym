@@ -59,6 +59,10 @@ const ContactForm = () => {
                 description: "Die Nachricht konnte nicht gesendet werden.",
                 color: "danger",
                 variant: "bordered",
+                classNames: {
+                    title: "text-black",
+                    description: "text-black",
+                },
                 timeout: 3000,
                 shouldShowTimeoutProgress: true,
             });

@@ -29,16 +29,16 @@ const Page = () => {
     ];
     const items = [
         {
-          altText : "sky",
-          imageUrl: "skysport.png",
+            altText : "DRB",
+            imageUrl: "DRB-Logo.png",
         },
         {
           altText : "DRB",
           imageUrl: "DRB-Logo.png",
         },
         {
-          altText : "eurosport",
-          imageUrl: "europsport.jpg",
+            altText : "DRB",
+            imageUrl: "DRB-Logo.png",
         },
     ]
 

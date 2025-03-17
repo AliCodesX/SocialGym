@@ -1,6 +1,8 @@
 'use client'
 import { Geist, Geist_Mono } from "next/font/google";
 import { HeroUIProvider } from "@heroui/react";
+import {ToastProvider} from "@heroui/toast";
+
 
 import "./globals.css";
 import NavbarComponent from "@/app/Components/Navbar";
@@ -23,6 +25,7 @@ export default function RootLayout({children,}: {
         <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <HeroUIProvider>
+            <ToastProvider placement="top-right" />
             <div className="flex flex-col min-h-screen">
                 <NavbarComponent />
                 <main className="flex-grow">{children}</main>

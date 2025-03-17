@@ -43,11 +43,15 @@ const ContactForm = () => {
                 title: "Erfolgreich!",
                 description: "Deine Nachricht wurde gesendet.",
                 color: "success",
-                variant: "flat", // oder z.B. "bordered"
+                variant: "flat",
+                classNames: {
+                    title: "text-black",
+                    description: "text-black",
+                },
                 timeout: 3000,
                 shouldShowTimeoutProgress: true,
-            });
 
+            });
             reset();
         } catch (error) {
             addToast({

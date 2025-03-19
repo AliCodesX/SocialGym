@@ -6,9 +6,9 @@ import XIcon from '@mui/icons-material/X';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import {InfiniteMovingCards} from "@/app/Components/ui/infiniteCards";
 import ContactForm  from "@/app/Components/ContactForm";
+import Maps from "@/app/Components/Maps";
 
 const Page = () => {
-
 
     const links = [
         {
@@ -42,9 +42,6 @@ const Page = () => {
         },
     ]
 
-    
-
-
     return (
         <div className="">
             <h1 className="text-4xl font-bold text-center mt-20">Kontakt</h1>
@@ -57,9 +54,10 @@ const Page = () => {
                     <h1 className="text-4xl font-bold text-center mt-20">Unsere Partner</h1>
                     <InfiniteMovingCards items={items}></InfiniteMovingCards>
                 </div>
-                <div>
-                    <h1 className="text-4xl font-bold text-center mt-20">So findest du uns</h1>
-                </div>
+
+                    <h1 className="text-4xl font-bold text-center mt-20 mb-5">So findest du uns</h1>
+                    <Maps></Maps>
+
             </div>
         </div>
     );

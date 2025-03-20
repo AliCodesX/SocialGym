@@ -3,11 +3,10 @@ import React from 'react'
 import HeroAbout from "@/app/Components/AboutHero";
 import Image from "next/image";
 import CardGridItemCoach from "@/app/Components/CardGridItemCoach";
-import {  Table,  TableHeader,  TableBody,  TableColumn,  TableRow,  TableCell,getKeyValue} from "@heroui/table";
+import { Table, TableHeader, TableBody, TableColumn, TableRow, TableCell, getKeyValue } from "@heroui/table";
+import { motion } from "framer-motion";
 
 const Page = () => {
-
-
     const rows = [
         {
             key: "1",
@@ -27,7 +26,6 @@ const Page = () => {
             trainer: "Fahim",
             ort: "Horn",
         },
-
     ];
 
     const columns = [
@@ -44,11 +42,13 @@ const Page = () => {
             label: "ORT",
         }
     ];
-    const CardItemData = [ {
-        image: "/coach1.jpg",
-        title: "Trainer 1",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
-    },
+
+    const CardItemData = [
+        {
+            image: "/coach1.jpg",
+            title: "Trainer 1",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+        },
         {
             image: "/coach2.jpeg",
             title: "Trainer 2",
@@ -66,31 +66,41 @@ const Page = () => {
         }
     ]
 
+    const motionProps = {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, amount: 0.3 },
+        transition: { duration: 1 },
+    };
+
     return (
         <div>
-            <HeroAbout/>
-            <div className="flex justify-center">
-                <div
-                    className=" flex flex-col md:flex-row gap-10 justify-center items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
+            <motion.div {...motionProps}>
+                <HeroAbout />
+            </motion.div>
+
+            <motion.div {...motionProps} className="flex justify-center">
+                <div className="flex flex-col md:flex-row gap-10 justify-center items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
                     <div className="flex-shrink-0 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px]">
-                        <Image src="/CEO.png" alt="wrestle" width={300} height={300}/>
+                        <Image src="/CEO.png" alt="wrestle" width={300} height={300} />
                     </div>
                     <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
                         <h1 className="text-4xl font-bold">CEO</h1>
                         <h2 className="text-2xl font-semibold">Fahim Afshar</h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, distinctio doloribus
-                            <br/>
+                            <br />
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
-                            <br/>
+                            <br />
                             facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
-                            <br/>
+                            <br />
                             Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
                         </p>
                     </div>
                 </div>
-            </div>
-            <div className="relative w-full h-screen flex items-center justify-center opacity-92">
+            </motion.div>
+
+            <motion.div {...motionProps} className="relative w-full h-screen flex items-center justify-center opacity-92">
                 <Image
                     src="/gymbackground.jpeg"
                     alt="Hero Background"
@@ -99,80 +109,79 @@ const Page = () => {
                     quality={100}
                     className="absolute inset-0 -z-10"
                 />
-
                 <div className="absolute inset-0 bg-black bg-opacity-80"></div>
-
-                <div className="relative  flex flex-col items-center text-center">
-                    <CardGridItemCoach items={CardItemData}/>
-
+                <div className="relative flex flex-col items-center text-center">
+                    <CardGridItemCoach items={CardItemData} />
                 </div>
-            </div>
-            <div className="flex justify-center">
-                <div
-                    className=" flex flex-col md:flex-row gap-10 justify-center  items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
+            </motion.div>
+
+            <motion.div {...motionProps} className="flex justify-center">
+                <div className="flex flex-col md:flex-row gap-10 justify-center items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
                     <div className="flex justify-center items-center">
-                        <h1 className="text-4xl text-center font-bold "> Club's Philosophy</h1>
+                        <h1 className="text-4xl text-center font-bold">Club's Philosophy</h1>
                     </div>
                     <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, distinctio doloribus
-                            <br/>
+                            <br />
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
-                            <br/>
+                            <br />
                             facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
-                            <br/>
+                            <br />
                             Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
                         </p>
                     </div>
                 </div>
-            </div>
-            <div className="flex justify-center bg-blue-700">
-                <div
-                    className="flex flex-col md:flex-row gap-10 justify-center items-center bg-blue-700 text-white md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
+            </motion.div>
+
+            <motion.div {...motionProps} className="flex justify-center bg-blue-700">
+                <div className="flex flex-col md:flex-row gap-10 justify-center items-center bg-blue-700 text-white md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
                     <div className="flex justify-center items-center">
-                        <h1 className="text-4xl text-center font-bold "> Athletic integration</h1>
+                        <h1 className="text-4xl text-center font-bold">Athletic Integration</h1>
                     </div>
                     <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, distinctio doloribus
-                            <br/>
+                            <br />
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
-                            <br/>
+                            <br />
                             facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
-                            <br/>
+                            <br />
                             Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
                         </p>
                     </div>
                 </div>
-            </div>
-            <div className="flex justify-center">
-                <div
-                    className=" flex flex-col md:flex-row gap-10 justify-center items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
+            </motion.div>
+
+            <motion.div {...motionProps} className="flex justify-center">
+                <div className="flex flex-col md:flex-row gap-10 justify-center items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
                     <div className="flex justify-center items-center">
-                        <h1 className="text-4xl text-center font-bold ">Personal Development </h1>
+                        <h1 className="text-4xl text-center font-bold">Personal Development</h1>
                     </div>
                     <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, distinctio doloribus
-                            <br/>
+                            <br />
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
-                            <br/>
+                            <br />
                             facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
-                            <br/>
+                            <br />
                             Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
-                            <br/>
+                            <br />
                             facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
-                            <br/>
+                            <br />
                             Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
                         </p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
-            <h1 className="text-center text-4xl font-bold">Trainigsplan</h1>
+            <motion.div {...motionProps} className="flex justify-center">
+                <h1 className="text-center text-4xl font-bold">Trainingsplan</h1>
+            </motion.div>
 
-            <div className="flex justify-center">
-                <div className=" mt-5 w-[80%]" id="training">
+            <motion.div {...motionProps} className="flex justify-center">
+                <div className="mt-5 w-[80%]" id="training">
                     <Table aria-label="Example table with dynamic content">
                         <TableHeader columns={columns}>
                             {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
@@ -186,9 +195,9 @@ const Page = () => {
                         </TableBody>
                     </Table>
                 </div>
-            </div>
-
+            </motion.div>
         </div>
     )
 }
+
 export default Page

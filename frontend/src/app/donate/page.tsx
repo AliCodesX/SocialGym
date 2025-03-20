@@ -1,66 +1,97 @@
 'use client'
 import React from 'react';
-import { Button } from "@heroui/react"
+import { Button } from "@heroui/react";
 import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 const Page = () => {
     return (
         <div className="min-h-screen ">
             {/* Header */}
-            <div className="bg-lakers text-white p-6">
-                <h1 className="text-3xl text-black font-bold text-center">
+            <motion.header
+                className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-transparent bg-clip-text p-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+            >
+                <h1 className="text-4xl font-bold text-center">
                     Unterstütze unseren Verein!
                 </h1>
-            </div>
+            </motion.header>
 
             {/* Main Content */}
-            <main className="max-w-4xl mx-auto p-6 space-y-8">
+            <main className="max-w-4xl mx-auto p-6 space-y-10">
                 {/* Warum spenden? */}
-                <section>
-                    <h2 className="text-2xl font-semibold text-lakers mb-4 mt-20">
+                <motion.section
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="visible"
+                    className="mt-20"
+                >
+                    <h2 className="text-3xl font-semibold text-blue-600 mb-4">
                         Warum spenden?
                     </h2>
-                    <p className="text-gray-700">
+                    <p className="text-gray-800 text-lg">
                         Deine Spende ermöglicht es uns, wichtige Projekte in der Gemeinschaft umzusetzen.
                         Jeder Beitrag macht einen Unterschied und unterstützt unsere Initiativen in Bildung,
                         sozialer Unterstützung und Umweltschutz.
                     </p>
-                </section>
+                </motion.section>
 
                 {/* Wofür wird gespendet? */}
-                <section>
-                    <h2 className="text-2xl font-semibold text-lakers mb-4 ">
+                <motion.section
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <h2 className="text-3xl font-semibold text-blue-600 mb-4">
                         Wofür wird gespendet?
                     </h2>
-                    <p className="text-gray-700">
+                    <p className="text-gray-800 text-lg">
                         Mit den Spenden finanzieren wir Bildungsprogramme, soziale Projekte und Umweltinitiativen,
                         die direkt Menschen in Not helfen und langfristig nachhaltige Veränderungen bewirken.
                     </p>
-                </section>
+                </motion.section>
 
                 {/* Bild als visuelles Highlight */}
-                <section>
-                    <img
-                        src="https://source.unsplash.com/featured/?donation"
-                        alt="Spenden - Gemeinsam Gutes tun"
-                        className="w-full h-64 object-cover rounded-lg shadow-lg"
-                    />
-                </section>
+                <motion.section
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <div className="relative w-full h-80 rounded-lg shadow-xl overflow-hidden">
+                        <Image
+                            src={"/dontation.png"}
+                            alt="Spenden - Gemeinsam Gutes tun"
+                            layout="fill"
+                            objectFit="cover"
+                        />
+                    </div>
+                </motion.section>
 
                 {/* Spenden-Button */}
-                <section className="text-center">
-                    <Link
-                        href="https://buy.stripe.com/test_4gw17j23c7yW9C85kk"> <Button
-                        size="lg"
-                        className="bg-lakers text-black hover:bg-lakers focus:bg-lakers"
-
-                    >
-                        Jetzt spenden
-                    </Button></Link>
-
-                </section>
+                <motion.section
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="visible"
+                    className="text-center"
+                >
+                    <Link href="https://buy.stripe.com/test_4gw17j23c7yW9C85kk" passHref>
+                        <Button
+                            size="lg"
+                            className="bg-lakers text-black  px-8 py-3 shadow-lg"
+                        >
+                            Jetzt spenden
+                        </Button>
+                    </Link>
+                </motion.section>
             </main>
-
         </div>
     );
 };

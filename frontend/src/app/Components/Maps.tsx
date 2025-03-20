@@ -20,9 +20,6 @@ const Maps = () => {
                 const { Map } = await loader.importLibrary('maps');
                 const { Marker } = await loader.importLibrary('marker');
 
-                const directionsService = new google.maps.DirectionsService();
-                const directionsRenderer = new google.maps.DirectionsRenderer();
-
                 const startPosition = { lat: 53.55227, lng: 10.00691 }; // Hamburg Hbf
                 const destination = { lat: 53.53422, lng: 10.03412 }; // Stengelstraße 38, 22111 Hamburg
 
@@ -33,23 +30,6 @@ const Maps = () => {
                 };
 
                 const map = new Map(mapRef.current as HTMLDivElement, mapOptions);
-                directionsRenderer.setMap(map);
-
-                // Route berechnen
-                directionsService.route(
-                    {
-                        origin: startPosition,
-                        destination: destination,
-                        travelMode: google.maps.TravelMode.DRIVING, // Alternativ: WALKING, BICYCLING, TRANSIT
-                    },
-                    (result, status) => {
-                        if (status === 'OK') {
-                            directionsRenderer.setDirections(result);
-                        } else {
-                            console.error('Fehler bei der Routenberechnung:', status);
-                        }
-                    }
-                );
 
                 // Marker für Start
                 new Marker({

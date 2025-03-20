@@ -24,6 +24,25 @@ export const AcmeLogo = () => {
     );
 };
 
+const NavigationMenuItems = [
+    {
+        label: "Home",
+        href: "/",
+    },
+    {
+        label: "About",
+        href: "/about",
+    },
+    {
+        label: "Trainingsplan",
+        href: "/about#training",
+    },
+    {
+        label: "Kontakt",
+        href: "/contact",
+    },
+]
+
 export default function NavbarComponent() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -73,27 +92,17 @@ export default function NavbarComponent() {
                     </Button>
                 </NavbarItem>
             </NavbarContent>
-            <NavbarMenu>
-                <NavbarMenuItem className="sm:hidden ">
-                    <Link className="text-white" href="/">
-                        Home
-                    </Link>
-                </NavbarMenuItem>
-                <NavbarMenuItem className="sm:hidden">
-                    <Link className="text-white" href="/about">
-                        Über uns
-                    </Link>
-                </NavbarMenuItem>
-                <NavbarMenuItem className="sm:hidden">
-                    <Link className="text-white" href="/contact">
-                        Kontakt
-                    </Link>
-                </NavbarMenuItem>
-                <NavbarMenuItem className="sm:hidden">
-                    <Link className="text-white" href="/donate">
-                        Spenden
-                    </Link>
-                </NavbarMenuItem>
+            <NavbarMenu className="bg-white ">
+                {NavigationMenuItems.map((item) => (
+                    <NavbarMenuItem
+                        className="border-b border-gray-300 last:border-b-0 font-bold  p-2"
+                        key={item.href}>
+                        <Link
+                            color="foreground" href={item.href}>
+                            {item.label}
+                        </Link>
+                    </NavbarMenuItem>
+                ))}
             </NavbarMenu>
         </Navbar>
     );

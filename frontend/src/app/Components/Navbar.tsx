@@ -65,7 +65,7 @@ export default function NavbarComponent() {
             </NavbarContent>
             <NavbarContent justify="end">
                 <NavbarItem className="hidden lg:flex">
-                    <Link className="text-black font-bold" href="/">Spenden</Link>
+                    <Link className="text-black font-bold" href="/donate">Spenden</Link>
                 </NavbarItem>
                 <NavbarItem>
                     <Button as={Link} className="bg-lakers font-bold drop-shadow-md " href="/subscriptions" variant="flat">
@@ -90,12 +90,10 @@ export default function NavbarComponent() {
                     </Link>
                 </NavbarMenuItem>
                 <NavbarMenuItem className="sm:hidden">
-                    <Link className="text-white" href="/">
+                    <Link className="text-white" href="/donate">
                         Spenden
                     </Link>
                 </NavbarMenuItem>
-
-
             </NavbarMenu>
         </Navbar>
     );

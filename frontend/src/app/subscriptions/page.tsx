@@ -3,6 +3,12 @@
 import { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Card, CardBody, CardHeader, CardFooter, Button } from "@heroui/react";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1.3 } },
+};
 
 interface SubscriptionPlan {
     id: string;
@@ -43,16 +49,32 @@ export default function Subscriptions() {
     };
 
     return (
-        <div className=" bg-background-100 p-8 flex flex-col items-center  " >
-            <div className="max-w-6xl w-full max-h-2xl space-y-8 flex-grow">
-                <div className="text-center space-y-4">
+        <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            className=" bg-background-100 p-8 flex flex-col items-center  " >
+            <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fadeUp}
+                className="max-w-6xl w-full max-h-2xl space-y-8 flex-grow">
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeUp}
+                    className="text-center space-y-4">
                     <h1 className="text-4xl font-bold text-foreground">Wähle dein Abonnement</h1>
                     <p className="text-default-500 text-lg">
                         Wähle den perfekten Plan für deine Bedürfnisse
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 ">
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeUp}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 ">
                     {plans.map(plan => (
                         <Card key={plan.id} className="border border-default-200">
                             <CardHeader className="flex flex-col gap-2">
@@ -77,8 +99,8 @@ export default function Subscriptions() {
                             </CardFooter>
                         </Card>
                     ))}
-                </div>
-            </div>
-        </div>
+                </motion.div>
+            </motion.div>
+        </motion.div>
     );
 }

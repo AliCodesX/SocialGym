@@ -14,7 +14,7 @@ export default function CardItemDark(props: CardItemProps) {
             <CardBody className="overflow-visible p-0">
                 <Image
                     alt="Card background"
-                    className="w-full object-cover  rounded-xl"
+                    className="w-full object-cover rounded-xl"
                     src={props.image}
                     height={250}
                     width="100%"
@@ -23,8 +23,8 @@ export default function CardItemDark(props: CardItemProps) {
 
 
             <CardFooter className="pb-2 p px-4 flex-col items-start">
-                <h4 className="font-bold text-large text-lakers">{props.title}</h4>
-                <small className=" text-left  text-white">
+                <h4 className="font-bold text-large text-black">{props.title}</h4>
+                <small className=" text-left text-black">
                     {props.description}
                 </small>
 

@@ -85,16 +85,12 @@ const Page = () => {
                         <Image src="/CEO.png" alt="wrestle" width={300} height={300} />
                     </div>
                     <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
-                        <h1 className="text-4xl font-bold">CEO</h1>
                         <h2 className="text-2xl font-semibold">Fahim Afshar</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, distinctio doloribus
-                            <br />
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
-                            <br />
-                            facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
-                            <br />
-                            Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
                         </p>
                     </div>
                 </div>
@@ -115,11 +111,8 @@ const Page = () => {
                     <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, distinctio doloribus
-                            <br />
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
-                            <br />
                             facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
-                            <br />
                             Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
                         </p>
                     </div>
@@ -153,41 +146,19 @@ const Page = () => {
                     <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, distinctio doloribus
-                            <br />
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum
-                            <br />
                             facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
-                            <br />
                             Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
-                            <br />
                             facilis fugiat id ipsa ipsum magni nostrum numquam odit optio porro recusandae reiciendis
-                            <br />
                             Mehr Text hier, um zu testen, ob der Container sich weiter ausdehnt oder nicht.
                         </p>
                     </div>
                 </div>
             </motion.div>
 
-            <motion.div {...motionProps} className="flex justify-center">
-                <h1 className="text-center text-4xl font-bold">Trainingsplan</h1>
-            </motion.div>
 
-            <motion.div {...motionProps} className="flex justify-center">
-                <div className="mt-5 w-[80%]" id="training">
-                    <Table aria-label="Example table with dynamic content">
-                        <TableHeader columns={columns}>
-                            {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
-                        </TableHeader>
-                        <TableBody items={rows}>
-                            {(item) => (
-                                <TableRow key={item.key}>
-                                    {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
-                                </TableRow>
-                            )}
-                        </TableBody>
-                    </Table>
-                </div>
-            </motion.div>
+
+
         </div>
     )
 }

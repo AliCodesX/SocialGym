@@ -37,7 +37,7 @@ export default function NavbarComponent() {
     const pathname = usePathname(); // Holt die aktuelle URL aus Next.js
 
     return (
-        <Navbar className="bg-black">
+        <Navbar className="bg-black py-5">
             <NavbarContent>
                 <NavbarMenuToggle aria-label="Toggle menu" className="sm:hidden" />
                 <NavbarBrand>
@@ -79,7 +79,7 @@ export default function NavbarComponent() {
             <NavbarContent justify="end">
                 <NavbarItem>
                     <Button as={Link} className="bg-lakers font-bold drop-shadow-md" href="/subscriptions" variant="flat">
-                        Mitglied werden
+                     Mitgliedschaft
                     </Button>
                 </NavbarItem>
             </NavbarContent>

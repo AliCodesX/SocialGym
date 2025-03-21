@@ -37,11 +37,11 @@ const Footer = () => {
             {/* Footer Links (Responsiv) */}
             <div className="mt-6 text-center">
                 <div className="flex flex-row flex-nowrap text-sm justify-center items-center space-x-6 sm:space-x-8 text-white">
-                    <motion.a href="/impressum" className="hover:text-[#FDB927]" {...hoverAnimation}>Impresum</motion.a>
-                    <motion.a href="/datenschutz" className="hover:text-[#FDB927]" {...hoverAnimation}>Datenschutz</motion.a>
-                    <motion.a href="/agb" className="hover:text-[#FDB927]" {...hoverAnimation}>AGB</motion.a>
-                    <motion.a href="/vereinssatzung" className="hover:text-[#FDB927]" {...hoverAnimation}>Vereinssatzung</motion.a>
-                    <motion.a href="/mitgliedschaft-kuendigen" className="hover:text-[#FDB927]" {...hoverAnimation}>Mitgliedschaft kündigen</motion.a>
+                    <motion.a href="/impressum" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Impresum</motion.a>
+                    <motion.a href="/datenschutz" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Datenschutz</motion.a>
+                    <motion.a href="/agb" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>AGB</motion.a>
+                    <motion.a href="/vereinssatzung" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Vereinssatzung</motion.a>
+                    <motion.a href="/mitgliedschaft-kuendigen" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Mitgliedschaft kündigen</motion.a>
                 </div>
             </div>
         </footer>

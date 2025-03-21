@@ -1,68 +1,48 @@
 "use client";
 import React from "react";
-import { FaTiktok, FaInstagram } from "react-icons/fa";
-import Link from "next/link";
+import { FaTiktok, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Footer = () => {
+    const hoverAnimation = {
+        whileHover: { y: -5 },
+        transition: { type: "spring", stiffness: 300 }
+    };
+
     return (
-        <footer className="bg-[#F4F4F4] text-black py-10 mt-10">
-            <div className="max-w-screen-2xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
-                    <ul className="text-sm space-y-2">
-                        <li className="font-medium">SocialGym</li>
-                        <li> Am Schilfpark 26</li>
-                        <li>21029 Hamburg</li>
-                        <li>Telefon: <a href="tel:04032044777" className="text-hoverColor">040/ 320 44 777</a></li>
-                        <li>Email: <a href="mailto:fahimafshar@gmail.com" className="text-hoverColor">fahimafshar@gmail.com</a></li>
-                    </ul>
+        <footer className="bg-[#552583] text-white py-10 mt-10 px-4">
+            <div className="text-center">
+                {/* Social Media Überschrift */}
+                <h3 className="text-lg font-semibold mb-4">Social Media</h3>
+
+                {/* Social Media Icons */}
+                <div className="flex justify-center items-center space-x-6">
+                    <motion.a href="https://www.tiktok.com/@momo.zozo.barber" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
+                        <FaTiktok />
+                    </motion.a>
+                    <motion.a href="https://www.instagram.com/momo.zozo.barber" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
+                        <FaInstagram />
+                    </motion.a>
+                    <motion.a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
+                        <FaLinkedin />
+                    </motion.a>
                 </div>
-                <div>
-                    <h3 className="text-lg font-semibold mb-4">Rechtliches</h3>
-                    <ul className="text-sm space-y-2">
-                        <li>
-                            <Link href="/" className="hover:underline">
-                                Impressum
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/" className="hover:underline">
-                                Datenschutzerklärung
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/" className="hover:underline">
-                                Allgemeine Geschäftsbedingungen
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 className="text-lg font-semibold mb-4"> SocialMedia </h3>
-                    <div className="flex items-center space-x-6">
-                        <a
-                            href="https://www.tiktok.com/@momo.zozo.barber?_t=8sTxmGtdyxa&_r=1"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="TikTok"
-                            className="text-2xl  hover:text-hoverColor"
-                        >
-                            <FaTiktok />
-                        </a>
-                        <a
-                            href="https://www.instagram.com/momo.zozo.barber?igsh=aDQ2emNuaGVxbnBk"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Instagram"
-                            className="text-2xl  hover:text-hoverColor"
-                        >
-                            <FaInstagram />
-                        </a>
-                    </div>
+
+                {/* Trennlinie & Copyright */}
+                <div className="mt-10 border-t border-gray-700 pt-4 text-sm">
+                    <p>&copy; {new Date().getFullYear()} SocialGym. Alle Rechte vorbehalten.</p>
                 </div>
             </div>
-            <div className="mt-10 border-t border-gray-700 pt-4 text-sm text-center">
-                <p>&copy; {new Date().getFullYear()}  SocialGym. Alle Rechte vorbehalten.</p>
+
+            {/* Footer Links (Responsiv) */}
+            <div className="mt-6 text-center">
+                <div className="flex flex-row flex-nowrap text-sm justify-center items-center space-x-6 sm:space-x-8 text-white">
+                    <motion.a href="/impressum" className="hover:text-[#FDB927]" {...hoverAnimation}>Impresum</motion.a>
+                    <motion.a href="/datenschutz" className="hover:text-[#FDB927]" {...hoverAnimation}>Datenschutz</motion.a>
+                    <motion.a href="/agb" className="hover:text-[#FDB927]" {...hoverAnimation}>AGB</motion.a>
+                    <motion.a href="/vereinssatzung" className="hover:text-[#FDB927]" {...hoverAnimation}>Vereinssatzung</motion.a>
+                    <motion.a href="/mitgliedschaft-kuendigen" className="hover:text-[#FDB927]" {...hoverAnimation}>Mitgliedschaft kündigen</motion.a>
+                </div>
             </div>
         </footer>
     );

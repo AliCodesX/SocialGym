@@ -37,7 +37,7 @@ export default function NavbarComponent() {
     const pathname = usePathname(); // Holt die aktuelle URL aus Next.js
 
     return (
-        <Navbar className="bg-black py-5">
+        <Navbar className="bg-[#1D2951] py-5">
             <NavbarContent>
                 <NavbarMenuToggle aria-label="Toggle menu" className="sm:hidden" />
                 <NavbarBrand>

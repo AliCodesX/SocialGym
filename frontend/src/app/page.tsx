@@ -56,8 +56,6 @@ export default function Home() {
                         </div>
                         <motion.div
                             whileHover={{ y:  -5 }}
-                            whileTap={{ scale: 0.9 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         >
                             <Link  href="/subscriptions">
                                 <Button  endContent={<FaArrowRightLong />} className=" py-8 px-10 bg-black text-white rounded-3xl " >

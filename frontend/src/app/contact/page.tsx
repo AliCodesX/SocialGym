@@ -69,14 +69,14 @@ const Page = () => {
                     <ContactForm />
                 </motion.div>
 
-                <motion.div
+            {/*    <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={fadeUp}
 
                 >
                     <FloatingDock items={links} />
-                </motion.div>
+                </motion.div>*/}
 
                 <motion.div
                     initial="hidden"

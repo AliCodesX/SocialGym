@@ -100,19 +100,11 @@ const Page = () => {
                 </div>
             </motion.div>
 
-            <motion.div {...motionProps} className="relative w-full h-screen flex items-center justify-center opacity-92">
-                <Image
-                    src="/gymbackground.jpeg"
-                    alt="Hero Background"
-                    layout="fill"
-                    objectFit="cover"
-                    quality={100}
-                    className="absolute inset-0 -z-10"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-80"></div>
-                <div className="relative flex flex-col items-center text-center">
-                    <CardGridItemCoach items={CardItemData} />
-                </div>
+
+            <motion.div  {...motionProps} className="relative flex flex-col items-center text-center">
+                <h1 className="text-4xl font-bold">Unser Trainerteam</h1>
+
+                <CardGridItemCoach items={CardItemData}/>
             </motion.div>
 
             <motion.div {...motionProps} className="flex justify-center">

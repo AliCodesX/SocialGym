@@ -37,12 +37,12 @@ export default function NavbarComponent() {
     const pathname = usePathname(); // Holt die aktuelle URL aus Next.js
 
     return (
-        <Navbar className="bg-[#552583]">
+        <Navbar className="bg-black">
             <NavbarContent>
                 <NavbarMenuToggle aria-label="Toggle menu" className="sm:hidden" />
                 <NavbarBrand>
                     <AcmeLogo />
-                    <p className="font-bold text-inherit">ACME</p>
+                    <p className="font-bold text-white">ACME</p>
                 </NavbarBrand>
             </NavbarContent>
 

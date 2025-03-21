@@ -10,7 +10,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-[#552583] text-white py-10 mt-10 px-4">
+        <footer className="bg-black text-white py-10 mt-10 px-4">
             <div className="text-center">
                 {/* Social Media Überschrift */}
                 <h3 className="text-lg font-semibold mb-4">Social Media</h3>
@@ -29,7 +29,7 @@ const Footer = () => {
                 </div>
 
                 {/* Trennlinie & Copyright */}
-                <div className="mt-10 border-t border-gray-700 pt-4 text-sm">
+                <div className="mt-10 pt-4 text-sm">
                     <p>&copy; {new Date().getFullYear()} SocialGym. Alle Rechte vorbehalten.</p>
                 </div>
             </div>

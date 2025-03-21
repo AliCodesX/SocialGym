@@ -21,7 +21,6 @@ export default function CardItemDark(props: CardItemProps) {
                 />
             </CardBody>
 
-
             <CardFooter className="pb-2 p px-4 flex-col items-start">
                 <h4 className="font-bold text-large text-black">{props.title}</h4>
                 <small className=" text-left text-black">

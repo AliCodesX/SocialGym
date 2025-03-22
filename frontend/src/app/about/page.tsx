@@ -2,7 +2,7 @@
 import React from 'react'
 import HeroAbout from "@/app/Components/AboutHero";
 import Image from "next/image";
-import CardGridItemCoach from "@/app/Components/CardGridItemCoach";
+import CardGridItemCoach from "@/app/Components/CardGridItem";
 import { motion } from "framer-motion";
 
 const Page = () => {
@@ -10,25 +10,59 @@ const Page = () => {
 
 
 
-    const CardItemData = [
+    const CardTrainerData = [
         {
             image: "/coach1.jpg",
             title: "Trainer 1",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum",
+            email: "qZ9dA@example.com",
+            telefone: "123456789"
         },
         {
             image: "/coach2.jpeg",
             title: "Trainer 2",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum",
+            email: "qZ9dA@example.com",
+            telefone: "123456789"
+
+
         },
         {
             image: "/coach3.jpg",
             title: "Trainer 3",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum",
+            email : "qZ9dA@example.com",
+            telefone: "123456789"
         },
         {
             image: "/coach4.jpg",
             title: "Trainer 4",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum",
+            email: "qZ9dA@example.com",
+            telefone: "123456789"
+
+        }
+    ]
+
+    const CardPresidentData = [
+        {
+            image: "/president1.jpg",
+            title: "President 1",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+        },
+        {
+            image: "/president2.jpg",
+            title: "President 2",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+        },
+        {
+            image: "/president3.jpg",
+            title: "President 3",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
+        },
+        {
+            image: "/president4.jpg",
+            title: "President 4",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
         }
     ]
@@ -62,16 +96,20 @@ const Page = () => {
                 <div className="w-full md:w-1/2 flex flex-col gap-4 max-w-[800px] text-center md:text-left">
                     <h2 className="text-2xl font-semibold">Das sind Wir!</h2>
                     <p>
-                        Der SocialGym Ringerverein wurde im Sommer 2023 gegründet und hat bereits zehn aktive Ringerteams sowie eine
-                        wachsende Fitness- und Athletikabteilung. Unser Fokus liegt auf zukünftigem Wachstum, der Förderung neuer Talente
+                        Der SocialGym Ringerverein wurde im Sommer 2023 gegründet und hat bereits zehn aktive
+                        Ringerteams sowie eine
+                        wachsende Fitness- und Athletikabteilung. Unser Fokus liegt auf zukünftigem Wachstum, der
+                        Förderung neuer Talente
                         und der Begeisterung der Jugend für den Ringsport. Unser Ziel ist es,
                         die Community durch Sport, Disziplin und Gemeinschaftssinn zu stärken und zu verbinden.
                         Du hast Fragen oder möchtest uns kennenlernen? Melde dich jederzeit gerne bei uns!
                         <br/>
                         <br/>
-                        E-Mail: info@socialgym.com
-                        <br/>
-                        Telefon: +49 40 80040433
+                            <span className="font-bold">E-Mail</span>:
+                            <a className="text-lakers font-bold" href="mailto:info@socialgym.com">  info@socialgym.com</a>
+                            <br/>
+                            <span className="font-bold">Telefon</span>:
+                            <span className="font-bold text-lakers "> 040/  80040433</span>
                     </p>
                 </div>
             </motion.div>
@@ -79,11 +117,11 @@ const Page = () => {
 
             <motion.div  {...motionProps} className="relative flex flex-col items-center text-center mt-20">
                 <h1 className="text-4xl font-bold">Unser Trainerteam</h1>
-                <CardGridItemCoach items={CardItemData}/>
+                <CardGridItemCoach items={CardTrainerData}/>
             </motion.div>
             <motion.div  {...motionProps} className="relative flex flex-col items-center text-center mt-20">
                 <h1 className="text-4xl font-bold">Unser Vorstand </h1>
-                <CardGridItemCoach items={CardItemData}/>
+                <CardGridItemCoach items={CardPresidentData}/>
             </motion.div>
 
             <motion.div {...motionProps} className="flex justify-center bg-fuchsia-900 mt-20">

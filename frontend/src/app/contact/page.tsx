@@ -66,10 +66,10 @@ const Page = () => {
                     animate="visible"
                     variants={fadeUp}
                 >
-                    <ContactForm />
+                    <ContactForm/>
                 </motion.div>
 
-            {/*    <motion.div
+                {/*    <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={fadeUp}
@@ -78,15 +78,6 @@ const Page = () => {
                     <FloatingDock items={links} />
                 </motion.div>*/}
 
-                <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    variants={fadeUp}
-
-                >
-                    <h1 className="text-4xl font-bold text-center mt-20">Unsere Partnerschaften</h1>
-                    <InfiniteMovingCards items={items} />
-                </motion.div>
 
                 <motion.h1
                     className="text-4xl font-bold text-center mt-20 mb-5"
@@ -102,7 +93,17 @@ const Page = () => {
                     animate="visible"
                     variants={fadeUp}
                 >
-                    <Maps />
+                    <Maps/>
+                </motion.div>
+
+
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeUp}
+
+                >
+                    <InfiniteMovingCards items={items}/>
                 </motion.div>
             </div>
         </div>

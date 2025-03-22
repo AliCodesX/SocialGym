@@ -37,7 +37,7 @@ export default function NavbarComponent() {
     const pathname = usePathname(); // Holt die aktuelle URL aus Next.js
 
     return (
-        <Navbar className="bg-[#1D2951] py-5">
+        <Navbar className="bg-[#1D2951] p-3 text-white">
             <NavbarContent>
                 <NavbarMenuToggle aria-label="Toggle menu" className="sm:hidden" />
                 <NavbarBrand>
@@ -85,7 +85,7 @@ export default function NavbarComponent() {
             </NavbarContent>
 
             {/* Mobile Menu */}
-            <NavbarMenu className="bg-white">
+            <NavbarMenu className=" bg-[#1D2951] mt-3 text-lakers ">
                 {NavigationMenuItems.map((item) => (
                     <NavbarMenuItem className="border-b border-gray-300 last:border-b-0 font-bold p-2" key={item.href}>
                         <Link color="foreground" href={item.href}>

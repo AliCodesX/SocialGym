@@ -1,3 +1,4 @@
+
 import React from 'react';
 import CardItem from "@/app/Components/CardItem";
 
@@ -6,19 +7,23 @@ export interface CardGridItemProps {
         image?: string;
         title?: string;
         description?: string;
+        email?: string;
+        telefone?: string
     }[];
 }
 
 const CardGridItem = ({ items }: CardGridItemProps) => {
     return (
-        <div className="flex justify-center mt-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5">
+        <div className="">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 {items.map((item, index) => (
                     <CardItem
                         key={index}
                         image={item.image}
                         title={item.title}
                         description={item.description}
+                        email={item.email}
+                        telefone={item.telefone}
                     />
                 ))}
             </div>

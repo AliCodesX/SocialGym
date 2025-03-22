@@ -47,7 +47,7 @@ export default function Home() {
                 <Hero />
             </motion.div>
 
-            <motion.div {...motionProps} className="flex justify-center bg-lakers"   >
+            <motion.div {...motionProps} className="flex justify-center"   >
                 <div className="flex flex-col md:flex-row gap-4 justify-center items-center md:items-start my-4 p-10 rounded-md max-w-[1200px] w-full">
                     <div className="flex flex-col gap-4 max-w-[800px] w-full text-center md:text-left">
                         <h1 className="text-5xl font-bold">Wir sind SocialGym!</h1>
@@ -58,7 +58,7 @@ export default function Home() {
                             whileHover={{ y:  -5 }}
                         >
                             <Link  href="/subscriptions">
-                                <Button  endContent={<FaArrowRightLong />} className=" py-8 px-10 bg-black text-white rounded-3xl " >
+                                <Button  endContent={<FaArrowRightLong />} className=" py-8 px-10 bg-lakers text-black rounded-3xl " >
                                     Mitglied werden
                                 </Button>
                             </Link>
@@ -70,13 +70,7 @@ export default function Home() {
                 </div>
             </motion.div>
 
-            <motion.div {...motionProps} className="flex justify-center">
-                <h1 className="text-center text-4xl font-bold mt-20">Upcoming Events</h1>
-            </motion.div>
 
-            <motion.div {...motionProps}>
-                <CardGridItem items={CardItemData} />
-            </motion.div>
         </div>
     );
 }

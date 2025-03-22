@@ -36,7 +36,7 @@ const Footer = () => {
 
             {/* Footer Links (Responsiv) */}
             <div className="mt-6 text-center">
-                <div className="flex flex-row flex-nowrap text-sm justify-center items-center space-x-6 sm:space-x-8 text-white">
+                <div className="flex flex-row flex-wrap text-sm justify-center items-center space-x-6 sm:space-x-8 text-white">
                     <motion.a href="/impressum" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Impresum</motion.a>
                     <motion.a href="/datenschutz" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Datenschutz</motion.a>
                     <motion.a href="/agb" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>AGB</motion.a>

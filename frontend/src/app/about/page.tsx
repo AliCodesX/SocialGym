@@ -46,22 +46,22 @@ const Page = () => {
 
     const CardPresidentData = [
         {
-            image: "/president1.jpg",
+            image: "/profile.jpg",
             title: "President 1",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
         },
         {
-            image: "/president2.jpg",
+            image: "/profile.jpg",
             title: "President 2",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
         },
         {
-            image: "/president3.jpg",
+            image: "/profile.jpg",
             title: "President 3",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
         },
         {
-            image: "/president4.jpg",
+            image: "/profile.jpg",
             title: "President 4",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
         }
@@ -94,8 +94,8 @@ const Page = () => {
                     />
                 </div>
                 <div className="w-full md:w-1/2 flex flex-col gap-4 max-w-[800px] text-center md:text-left">
-                    <h2 className="text-2xl font-semibold">Das sind Wir!</h2>
-                    <p>
+                    <h2 className="text-4xl font-bold mb-4">Das sind Wir!</h2>
+                    <p className=" text-lg">
                         Der SocialGym Ringerverein wurde im Sommer 2023 gegründet und hat bereits zehn aktive
                         Ringerteams sowie eine
                         wachsende Fitness- und Athletikabteilung. Unser Fokus liegt auf zukünftigem Wachstum, der
@@ -116,11 +116,11 @@ const Page = () => {
 
 
             <motion.div  {...motionProps} className="relative flex flex-col items-center text-center mt-20">
-                <h1 className="text-4xl font-bold">Unser Trainerteam</h1>
+                <h1 className="text-4xl font-bold mb-4 ">Unser Trainerteam</h1>
                 <CardGridItemCoach items={CardTrainerData}/>
             </motion.div>
             <motion.div  {...motionProps} className="relative flex flex-col items-center text-center mt-20">
-                <h1 className="text-4xl font-bold">Unser Vorstand </h1>
+                <h1 className="text-4xl font-bold mb-4">Unser Vorstand </h1>
                 <CardGridItemCoach items={CardPresidentData}/>
             </motion.div>
 

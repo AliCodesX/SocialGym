@@ -1,29 +1,28 @@
 'use client'
-import { Geist, Geist_Mono } from "next/font/google";
+import { Oswald, Poppins } from "next/font/google";
 import { HeroUIProvider } from "@heroui/react";
-import {ToastProvider} from "@heroui/toast";
-
+import { ToastProvider } from "@heroui/toast";
 
 import "./globals.css";
 import NavbarComponent from "@/app/Components/Navbar";
 import Footer from "@/app/Components/Footer";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+const oswald = Oswald({
+    variable: "--font-oswald",
     subsets: ["latin"],
+    weight: ["400", "700"], // Für normale & fette Titel
 });
 
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
+const poppins = Poppins({
+    variable: "--font-poppins",
     subsets: ["latin"],
+    weight: ["300", "400", "600"], // Für verschiedene Textgrößen
 });
 
-export default function RootLayout({children,}: {
-    children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <body className={`${oswald.variable} ${poppins.variable} antialiased`}>
         <HeroUIProvider>
             <ToastProvider placement="top-right" />
             <div className="flex flex-col min-h-screen">

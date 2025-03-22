@@ -4,6 +4,7 @@ import { Button } from "@heroui/react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import HeroAbout from "@/app/Components/AboutHero";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 20 },
@@ -13,12 +14,16 @@ const fadeUp = {
 const Page = () => {
     return (
         <div className="min-h-screen ">
+
+            <motion.div variants={fadeUp} initial="hidden" animate="visible">
+                <HeroAbout title="Spenden"/>
+            </motion.div>
             {/* Header */}
             <motion.header
                 className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-transparent bg-clip-text p-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{duration: 1}}
             >
                 <h1 className="text-4xl font-bold text-center">
                     Unterstütze unseren Verein!

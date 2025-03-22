@@ -10,7 +10,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-[#1D2951] text-white py-10 mt-10 px-4">
+        <footer className="bg-navgray text-white py-10 mt-10 px-4">
             <div className="text-center">
                 {/* Social Media Überschrift */}
                 <h3 className="text-lg font-semibold mb-4">Social Media</h3>

@@ -17,13 +17,13 @@ const Footer = () => {
 
                 {/* Social Media Icons */}
                 <div className="flex justify-center items-center space-x-6">
-                    <motion.a href="https://www.tiktok.com/@momo.zozo.barber" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
+                    <motion.a href="" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
                         <FaTiktok />
                     </motion.a>
-                    <motion.a href="https://www.instagram.com/momo.zozo.barber" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
+                    <motion.a href="https://www.instagram.com/socialgym.hamburg/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
                         <FaInstagram />
                     </motion.a>
-                    <motion.a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
+                    <motion.a href="https://www.linkedin.com/in/fahim-afshar-8412b51b3/?originalSubdomain=de" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
                         <FaLinkedin />
                     </motion.a>
                 </div>

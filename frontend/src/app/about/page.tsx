@@ -145,7 +145,7 @@ const Page = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                className="flex justify-center bg-fuchsia-900 mt-20 py-16"
+                className="flex justify-center bg-navgray mt-20 py-16"
             >
                 <div className="flex flex-col md:flex-row gap-10 text-white justify-center items-center md:items-start max-w-[1200px] w-full p-10 rounded-lg">
                     <div className="flex justify-center items-center">

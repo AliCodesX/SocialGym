@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
     const hoverAnimation = {
+        whileTap : { y: -5 },
         whileHover: { y: -5 },
         transition: { type: "spring", stiffness: 300 }
     };

@@ -14,13 +14,19 @@ export async function POST(request: Request): Promise<NextResponse> {
     try {
         const session = await stripe.checkout.sessions.create({
             mode: 'subscription',
-            payment_method_types: ['card'],
+            payment_method_types: ['card','sepa_debit'],
             line_items: [
                 {
                     price: priceId,
                     quantity: 1,
                 },
             ],
+            billing_address_collection: 'required',
+            phone_number_collection: { enabled: true },
+            metadata: {
+                full_name: 'Max Mustermann',
+                birthdate: '1990-01-01'
+            },
             success_url: `${request.headers.get('origin')}/success?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: `${request.headers.get('origin')}/subscriptions`,
         });

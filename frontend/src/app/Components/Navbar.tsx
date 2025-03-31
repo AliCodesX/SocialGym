@@ -28,9 +28,10 @@ export const AcmeLogo = () => (
 
 const NavigationMenuItems = [
     { label: "Home", href: "/" },
-    { label: "Über uns", href: "/about" },
     { label: "Kontakt", href: "/contact" },
     { label: "Spenden", href: "/donate" },
+    {label: "Projekte", href: "/projects"},
+    { label: "SocialGym", href: "/about" },
 ];
 
 export default function NavbarComponent() {
@@ -42,7 +43,7 @@ export default function NavbarComponent() {
                 <NavbarMenuToggle aria-label="Toggle menu" className="sm:hidden" />
                 <NavbarBrand>
                     <AcmeLogo />
-                    <p className="font-bold text-white">ACME</p>
+                    <p className="font-bold text-white">SOCIAL-INSAN</p>
                 </NavbarBrand>
             </NavbarContent>
 
@@ -67,7 +68,7 @@ export default function NavbarComponent() {
                                         initial={{ width: 0 }}
                                         animate={{ width: "100%" }}
                                         exit={{ width: 100 }}
-                                        transition={{ duration: 0.3 }}
+                                        transition={{ duration: 0.3, ease: "easeOut" }}
                                     />
                                 )}
                             </Link>

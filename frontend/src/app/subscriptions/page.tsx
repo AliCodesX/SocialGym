@@ -8,9 +8,6 @@ const fadeUp = {
     visible: { opacity: 1, y: 0, transition: { duration: 1.3 } },
 };
 
-
-
-
 export default function Subscriptions() {
 
     return (
@@ -34,7 +31,6 @@ export default function Subscriptions() {
                         Wähle den perfekten Tarif für deine Bedürfnisse
                     </p>
                 </motion.div>
-
                 <motion.div
                     initial="hidden"
                     animate="visible"

@@ -1,12 +1,26 @@
+'use client'
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { Card, CardBody, CardHeader, CardFooter, Button } from '@heroui/react';
 
+type Tarif = {
+    name: string;
+    price: number;
+    interval: string;
+    fee: number;
+};
+
 export const Tarife = () => {
-    const tarife = [
+    const router = useRouter();
+    const tarife: Tarif[] = [
         { name: 'Erwachsene', price: 10, interval: 'Monatlich', fee: 20 },
         { name: 'Kinder/Jugendliche', price: 8, interval: 'Monatlich', fee: 20 },
         { name: 'Passive Mitglieder', price: 5, interval: 'Monatlich', fee: 20 },
     ];
+
+    const handleMitgliedWerden = (tarif: Tarif) => {
+        router.push(`/membershipform?tarif=${tarif.name}`);
+    };
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
@@ -18,13 +32,20 @@ export const Tarife = () => {
                             <span className="text-3xl font-bold">€{tarif.price.toFixed(2)}</span>
                             <span className="text-default-500">/{tarif.interval}</span>
                         </div>
-                        <p className="text-sm text-default-500">Aufnahmegebühr: €{tarif.fee.toFixed(2)}</p>
+                        <p className="text-sm text-default-500">
+                            Aufnahmegebühr: €{tarif.fee.toFixed(2)}
+                        </p>
                     </CardHeader>
                     <CardBody>
                         <p className="text-sm text-default-500">Mitgliedsbeitrag für {tarif.name}</p>
                     </CardBody>
                     <CardFooter>
-                        <Button className="bg-lakers" fullWidth size="lg">
+                        <Button
+                            onClick={() => handleMitgliedWerden(tarif)}
+                            className="bg-lakers"
+                            fullWidth
+                            size="lg"
+                        >
                             Mitglied werden
                         </Button>
                     </CardFooter>
@@ -34,4 +55,4 @@ export const Tarife = () => {
     );
 };
 
-
+export default Tarife;

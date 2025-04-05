@@ -50,28 +50,7 @@ const Page = () => {
         }
     ];
 
-    const CardPresidentData = [
-        {
-            image: "/profile.jpg",
-            title: "Präsident",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
-        },
-        {
-            image: "/profile.jpg",
-            title: "Vize-Präsident",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
-        },
-        {
-            image: "/profile.jpg",
-            title: "Sport Vorstand",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
-        },
-        {
-            image: "/profile.jpg",
-            title: "Schatzmeisterin",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum"
-        }
-    ];
+
 
     return (
         <div>
@@ -127,17 +106,6 @@ const Page = () => {
             >
                 <h1 className="text-4xl font-bold mb-4">Unser Trainerteam</h1>
                 <CardGridItemCoach items={CardTrainerData}/>
-            </motion.div>
-
-            <motion.div
-                variants={fadeUpVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                className="relative flex flex-col items-center text-center mt-20"
-            >
-                <h1 className="text-4xl font-bold mb-4">Unser Vorstand</h1>
-                <CardGridItemCoach items={CardPresidentData}/>
             </motion.div>
 
             <motion.div

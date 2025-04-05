@@ -96,6 +96,15 @@ const Page = () => {
                             Jetzt unterstützen
                         </Button>
                     </Link>
+                    <Link href="https://buy.stripe.com/test_4gw17j23c7yW9C85kk" passHref>
+                        <Button
+                            size="lg"
+                            aria-label="Jetzt spenden"
+                            className="bg-lakers text-black hover:bg-yellow-300 transition-all duration-300 px-8 py-3 shadow-lg"
+                        >
+                            An verein Spenden
+                        </Button>
+                    </Link>
                 </motion.section>
 
                 {/* Erfolge & Vertrauen */}

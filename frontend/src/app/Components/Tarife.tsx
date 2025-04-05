@@ -41,7 +41,7 @@ export const Tarife = () => {
                     </CardBody>
                     <CardFooter>
                         <Button
-                            onClick={() => handleMitgliedWerden(tarif)}
+                            onPress={() => handleMitgliedWerden(tarif)}
                             className="bg-lakers"
                             fullWidth
                             size="lg"

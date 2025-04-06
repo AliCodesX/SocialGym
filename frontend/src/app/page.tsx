@@ -64,13 +64,13 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 id="mehr"
-                className="bg-white text-black py-20 px-6 md:px-12 flex justify-center"
+                className="bg-white text-black mt-5 py-20 px-6 md:px-12 flex justify-center"
             >
                 <div className="max-w-[1100px] flex flex-col gap-8 text-center md:text-left">
                     <h2 className="text-4xl font-bold">Unsere Mission</h2>
                     <p className="text-lg leading-relaxed">
                         Social Insan e.V. wurde 2023 gegründet, um jungen Menschen einen sicheren Raum zu bieten, in dem sie durch
-                        Sport, Bildung und interkulturellen Austausch wachsen können. <br />
+                        Sport, Bildung und interkulturellen Austausch wachsen können.
                         Ob auf der Matte oder im Alltag – bei uns zählt Teamgeist, Disziplin und gegenseitiger Respekt.
                     </p>
                 </div>

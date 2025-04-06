@@ -66,16 +66,17 @@ export default function Page() {
             </motion.div>
 
             <div className="flex flex-col md:flex-row gap-[150px] items-center justify-center mt-20 max-w-5xl mx-auto px-4">
-                <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-md">
-                    <motion.h1
+                <motion.div
+                    variants={fadeUpVariant}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{once: true, amount: 0.3}}
+                    className="flex flex-col items-center md:items-start text-center md:text-left max-w-md">
+                    <div
                         className="text-4xl font-bold flex flex-wrap"
-                        variants={fadeUpVariant}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{once: true, amount: 0.3}}
                     >
                         Gerne stehen wir mit Rat und Tat zur Verfügung!
-                    </motion.h1>
+                    </div>
                     <p className="mt-4">
                         Sie können uns jederzeit kontaktieren – wir stehen Ihnen gerne zur Verfügung und bemühen uns um eine zeitnahe Rückmeldung.
                         Senden Sie uns eine Nachricht oder treten Sie direkt mit uns in Kontakt – wir nehmen uns jedem Anliegen aufmerksam an.
@@ -95,7 +96,7 @@ export default function Page() {
                             <span className="font-light text-lg">+49 40 80040433</span>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Rechte Spalte: ContactForm */}
                 <motion.div
@@ -103,7 +104,7 @@ export default function Page() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{once: true, amount: 0.3}}
-                    className="w-full max-w-md"
+                    className="w-full "
                 >
                     <ContactForm/>
                 </motion.div>
@@ -144,15 +145,15 @@ export default function Page() {
             </motion.div>
 
             {/* Infinite Moving Cards */}
-            <motion.div
-                variants={fadeUpVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{once: true, amount: 0.3}}
-                className="w-full max-w-[1200px] mx-auto px-4"
-            >
-                <InfiniteMovingCards items={items}/>
-            </motion.div>
+            {/*<motion.div*/}
+            {/*    variants={fadeUpVariant}*/}
+            {/*    initial="hidden"*/}
+            {/*    whileInView="visible"*/}
+            {/*    viewport={{once: true, amount: 0.3}}*/}
+            {/*    className="w-full max-w-[1200px] mx-auto px-4"*/}
+            {/*>*/}
+            {/*    <InfiniteMovingCards items={items}/>*/}
+            {/*</motion.div>*/}
         </div>
     );
 }

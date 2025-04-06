@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -45,7 +44,6 @@ export default function NavbarComponent() {
 
                 </NavbarBrand>
             </NavbarContent>
-
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 {NavigationMenuItems.map((item) => {
                     const isActive = pathname === item.href;

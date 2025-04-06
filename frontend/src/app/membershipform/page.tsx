@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, {Suspense} from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -41,6 +41,7 @@ const MitgliedWerden = () => {
     };
 
     return (
+        <Suspense fallback={<div>Loading...</div>}>
         <div className="max-w-lg mx-auto mt-8">
             <h2 className="text-2xl font-semibold mb-4">Mitgliedschaft: {tarif}</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -107,6 +108,7 @@ const MitgliedWerden = () => {
                 </Button>
             </form>
         </div>
+        </Suspense>
     );
 };
 

@@ -11,7 +11,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-navgray text-white py-10 mt-10 px-4">
+        <footer className="bg-navgray text-white py-20 mt-10 px-4">
             <div className="text-center">
                 {/* Social Media Überschrift */}
                 <h3 className="text-lg font-semibold mb-4">Social Media</h3>
@@ -42,7 +42,8 @@ const Footer = () => {
                     <motion.a href="/datenschutz" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Datenschutz</motion.a>
                     <motion.a href="/agb" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>AGB</motion.a>
                     <motion.a href="/vereinssatzung" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Vereinssatzung</motion.a>
-                    <motion.a href="/mitgliedschaft-kuendigen" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Mitgliedschaft kündigen</motion.a>
+                    <motion.a href="/cancel" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Mitgliedschaft kündigen</motion.a>
+                    <motion.a href="/revocation" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Widerrufsbelehrung</motion.a>
                 </div>
             </div>
         </footer>

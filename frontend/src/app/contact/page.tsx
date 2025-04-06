@@ -54,14 +54,14 @@ export default function Page() {
     return (
         <div className="overflow-x-hidden">
             {/* Hero-Bereich bleibt unverändert */}
-            <motion.div
+          {/*  <motion.div
                 variants={fadeUpVariant}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{once: true, amount: 0.3}}
             >
                 <HeroAbout title="Kontakt"/>
-            </motion.div>
+            </motion.div>*/}
 
             <div className="flex flex-col md:flex-row gap-[150px] items-center justify-center mt-20 max-w-5xl mx-auto px-4">
                 <motion.div

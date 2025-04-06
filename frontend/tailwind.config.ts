@@ -32,7 +32,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         lakers: "#FDB927",
-        navgray: "#2C3539",
+        navgray: "#000d1e",
       },
     },
   },

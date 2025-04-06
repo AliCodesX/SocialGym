@@ -1,8 +1,6 @@
 'use client'
 import React from "react";
-import { InfiniteMovingCards } from "@/app/Components/ui/infiniteCards";
 import ContactForm from "@/app/Components/ContactForm";
-import Maps from "@/app/Components/Maps";
 import { motion } from "framer-motion";
 import HeroAbout from "@/app/Components/AboutHero";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
@@ -83,7 +81,7 @@ export default function Page() {
                         Bitte beachten Sie, dass <span className="font-semibold">Terminvereinbarungen</span> mittwochs in der Zeit von <span className="font-semibold">15:30 bis 18:30 Uhr</span>   möglich sind.
                     </p>
                     {/* Kontaktinfos mit Icons */}
-                    <div className="mt-6 flex gap-10 shadow-small p-10 rounded-md">
+                    <div className="mt-6 flex gap-10 bord p-10 rounded-md">
                         <div className="flex items-center flex-col gap-3">
                             <FaEnvelope className="text-3xl text-lakers"/>
                             <p className="uppercase font-bold">e-mail</p>
@@ -123,26 +121,7 @@ export default function Page() {
             </motion.div>
 
             {/* Abschnitt "Hier findest du uns!" */}
-            <motion.h1
-                className="text-4xl font-bold text-center mt-32 mb-10"
-                variants={fadeUpVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{once: true, amount: 0.3}}
-            >
-                So findest du uns!
-            </motion.h1>
 
-            {/* Maps */}
-            <motion.div
-                variants={fadeUpVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{once: true, amount: 0.3}}
-                className="w-full max-w-[1200px] mx-auto px-4 mb-16 flex justify-center"
-            >
-                <Maps/>
-            </motion.div>
 
             {/* Infinite Moving Cards */}
             {/*<motion.div*/}

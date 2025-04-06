@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
+import {Button, Input} from "@heroui/react";
 
 const Maps = () => {
     const mapRef = useRef<HTMLDivElement | null>(null);
@@ -9,13 +10,9 @@ const Maps = () => {
     const [map, setMap] = useState<google.maps.Map | null>(null);
     const [directionsRenderer, setDirectionsRenderer] = useState<google.maps.DirectionsRenderer | null>(null);
 
-    // Festes Ziel: Stengelstraße 38, Hamburg
-    const destination = { lat: 53.53422, lng: 10.03412 };
+    const destination = { lat: 53.549753, lng: 10.092986 };
 
     useEffect(() => {
-        if (!mapRef.current) return;
-
-        // Google Maps Loader konfigurieren
         const loader = new Loader({
             apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
             version: 'weekly',
@@ -23,27 +20,23 @@ const Maps = () => {
         });
 
         loader.load().then((google) => {
-            // Karte initialisieren
             const mapInstance = new google.maps.Map(mapRef.current as HTMLDivElement, {
                 center: destination,
                 zoom: 13,
-                mapId: 'MY_NEXTJS_MAPID', // Optional: falls du ein benutzerdefiniertes Styling nutzt
+                mapId: 'MY_NEXTJS_MAPID',
             });
             setMap(mapInstance);
 
-            // Marker für das Ziel platzieren
             new google.maps.Marker({
                 position: destination,
                 map: mapInstance,
                 title: 'Ziel: Stengelstraße 38, Hamburg',
             });
 
-            // DirectionsRenderer für die Anzeige der Route initialisieren
-            const renderer = new google.maps.DirectionsRenderer();
+            const renderer = new google.maps.DirectionsRenderer({ suppressMarkers: true });
             renderer.setMap(mapInstance);
             setDirectionsRenderer(renderer);
 
-            // Autocomplete für das Eingabefeld einrichten
             if (inputRef.current) {
                 new google.maps.places.Autocomplete(inputRef.current);
             }
@@ -52,7 +45,6 @@ const Maps = () => {
         });
     }, []);
 
-    // Route berechnen und anzeigen
     const handleRoute = () => {
         if (!inputRef.current || !directionsRenderer || !map) return;
 
@@ -73,39 +65,36 @@ const Maps = () => {
             (result, status) => {
                 if (status === 'OK' && result) {
                     directionsRenderer.setDirections(result);
-
-                    // Optional: Start-Marker anhand der Route hinzufügen
-                    if (result.routes[0].legs[0].start_location) {
-                        new google.maps.Marker({
-                            position: result.routes[0].legs[0].start_location,
-                            map,
-                            title: 'Start',
-                        });
-                    }
+                    new google.maps.Marker({
+                        position: result.routes[0].legs[0].start_location,
+                        map,
+                        title: 'Start',
+                    });
                 } else {
                     alert('Route konnte nicht berechnet werden: ' + status);
                 }
             }
         );
     };
-
     return (
-        <div className="flex flex-col items-center gap-4">
-            <input
-                ref={inputRef}
-                type="text"
-                placeholder="Deine Startadresse"
-                className="w-full max-w-md px-4 py-2 border border-gray-300 rounded"
-            />
-            <button
-                onClick={handleRoute}
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-                Route anzeigen
-            </button>
+        <div className="w-full px-4 py-8 flex flex-col items-center gap-6 ">
+            <div className="w-full max-w-3xl flex flex-col sm:flex-row items-center gap-4">
+                <Input
+                    ref={inputRef}
+                    type="text"
+                    placeholder="Startadresse eingeben"
+                    className="flex-1 w-full px-4 py-3 border  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <Button
+                    onPress={handleRoute}
+                    className="px-5 py-3 bg-lakers text-black rounded-md shadow transition"
+                >
+                    Route anzeigen
+                </Button>
+            </div>
             <div
                 ref={mapRef}
-                className="w-full max-w-[600px] aspect-square rounded-lg shadow-lg"
+                className="w-full max-w-6xl h-[70vh] rounded-lg shadow-lg"
             />
         </div>
     );

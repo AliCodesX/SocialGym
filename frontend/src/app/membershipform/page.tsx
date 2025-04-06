@@ -1,12 +1,11 @@
-'use client'
-import React, {Suspense} from 'react';
+'use client';
+import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button, Input, Checkbox, DatePicker } from '@heroui/react';
 import { parseDate } from '@internationalized/date';
-
 
 const memberSchema = z.object({
     vorname: z.string().min(1, 'Vorname erforderlich'),
@@ -28,12 +27,19 @@ const memberSchema = z.object({
 type MemberFormData = z.infer<typeof memberSchema>;
 
 const MitgliedWerden = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <MitgliedForm />
+        </Suspense>
+    )
+}
 
-
+const MitgliedForm = () => {
     const searchParams = useSearchParams();
     const tarif = searchParams.get('tarif');
 
-    const {control, register,handleSubmit, formState: { errors },} = useForm<MemberFormData>({resolver: zodResolver(memberSchema),
+    const { control, register, handleSubmit, formState: { errors } } = useForm<MemberFormData>({
+        resolver: zodResolver(memberSchema),
     });
 
     const onSubmit: SubmitHandler<MemberFormData> = (data) => {
@@ -41,7 +47,6 @@ const MitgliedWerden = () => {
     };
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
         <div className="max-w-lg mx-auto mt-8">
             <h2 className="text-2xl font-semibold mb-4">Mitgliedschaft: {tarif}</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -108,7 +113,6 @@ const MitgliedWerden = () => {
                 </Button>
             </form>
         </div>
-        </Suspense>
     );
 };
 

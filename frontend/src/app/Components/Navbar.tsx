@@ -30,21 +30,22 @@ const NavigationMenuItems = [
 ];
 
 export default function NavbarComponent() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Zustand für das Menü
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen); // Toggle für das Menü
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
         <Navbar className="bg-[#a0c8e3] p-3.5 text-black">
-            {/* Linkes Logo */}
             <NavbarContent>
                 <NavbarBrand>
-                    <InsanLogo />
+                    <Link href="/">
+                        <InsanLogo />
+                    </Link>
+
                 </NavbarBrand>
             </NavbarContent>
 
-            {/* Desktop Navigation (zentriert) */}
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 {NavigationMenuItems.map((item) => {
                     const isActive = pathname === item.href;

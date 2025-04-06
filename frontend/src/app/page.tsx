@@ -1,6 +1,4 @@
 'use client'
-
-import Hero from "@/app/Components/Hero";
 import { Button } from "@heroui/react";
 import React from "react";
 import Image from "next/image";
@@ -27,11 +25,11 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 className="relative flex justify-center bg-cover bg-center w-full h-full min-h-[90vh]"
-                style={{ backgroundImage: 'url("/people.jpg")' }}
+                style={{ backgroundImage: 'url("/culture.jpg")' }}
             >
                 <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative flex flex-col justify-center items-start p-10 max-w-[1200px] w-full text-white gap-6">
-                    <h1 className="text-3xl md:text-5xl font-bold ">Wir sind Social-Insan!</h1>
+                    <h1 className="text-3xl md:text-5xl font-bold text-lakers ">Wir sind Social-Insan!</h1>
                     <p className="text-lg md:text-2xl font-medium">
                         Sport. Integration. Menschlichkeit. <br />
                         Wir fördern junge Menschen durch Ringen, Bildung & interkulturellen Dialog.

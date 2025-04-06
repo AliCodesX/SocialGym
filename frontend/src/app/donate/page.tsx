@@ -4,131 +4,83 @@ import { Button } from "@heroui/react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import HeroAbout from "@/app/Components/AboutHero";
 
-const fadeUp = {
+const fadeUpVariant = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const Page = () => {
+const DonationSections = () => {
     return (
-        <div className="min-h-screen flex flex-col">
-            {/* Hero-Bereich */}
-            <motion.div variants={fadeUp} initial="hidden" animate="visible">
-                <HeroAbout title="Unterstütze unseren Ringerverein!" />
+        <div className="space-y-16">
+            {/* Spendenbereich: Für den Verein */}
+            <motion.div
+                variants={fadeUpVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="flex flex-col md:flex-row items-center justify-center py-16 px-6 gap-12 bg-white"
+            >
+
+                <Image
+                    src="/vereinspende.jpg"
+                    alt="Spenden für den Verein"
+                    width={600}
+                    height={600}
+                    className="rounded-xl shadow-lg"
+                />
+                <div className="max-w-xl text-center md:text-left">
+                    <h3 className="text-3xl font-bold mb-4">Spenden für den Verein</h3>
+                    <p className="text-lg mb-6">
+                        Unterstütze unseren Ringerverein und hilf uns, Trainingsausrüstung, Wettkampfvorbereitung und Nachwuchsförderung zu finanzieren.
+                    </p>
+                    <Link href="https://buy.stripe.com/test_4gw17j23c7yW9C85kk" passHref>
+                        <Button
+                            size="lg"
+                            aria-label="Spenden für den Verein"
+                            className="bg-lakers uppercase text-black hover:bg-yellow-300 transition-all duration-300 px-8 py-3 shadow-lg"
+                        >
+                            jetzt spenden
+                        </Button>
+                    </Link>
+                </div>
+
             </motion.div>
 
-            {/* Header */}
-            <motion.header
-                className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-transparent bg-clip-text p-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+            {/* Spendenbereich: Für soziale Projekte */}
+            <motion.div
+                variants={fadeUpVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="flex flex-col md:flex-row items-center justify-center py-16 px-6 gap-12 bg-white"
             >
-                <h1 className="text-4xl md:text-5xl font-bold text-center">
-                    Werde Teil unserer Erfolgsgeschichte!
-                </h1>
-            </motion.header>
-
-            {/* Main Content */}
-            <main className="max-w-5xl mx-auto p-6 space-y-10 flex-1">
-                {/* Warum spenden? */}
-                <motion.section
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate="visible"
-                    className="mt-10"
-                >
-                    <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-                        Warum unterstützen?
-                    </h2>
-                    <p className="text-gray-800 text-lg leading-relaxed">
-                        Deine Spende hilft, talentierte Ringer zu fördern, Trainingsbedingungen zu verbessern und unsere Athleten auf Wettkämpfe vorzubereiten.
-                        Jeder Beitrag trägt dazu bei, unseren Sport lebendig zu halten und neue Champions hervorzubringen!
+                {/* Hier wird im Desktop-Layout das Bild links und der Text rechts angezeigt */}
+                <Image
+                    src="/projektspende.jpg"
+                    alt="Spenden für soziale Projekte"
+                    width={600}
+                    height={600}
+                    className="rounded-xl shadow-lg order-1 md:order-0"
+                />
+                <div className="max-w-xl text-center md:text-left">
+                    <h3 className="text-3xl font-bold mb-4">Spenden für soziale Projekte</h3>
+                    <p className="text-lg mb-6">
+                        Unterstütze auch unsere sozialen Projekte. Jeder Beitrag hilft dabei, junge Menschen zu fördern und soziale Initiativen voranzubringen.
                     </p>
-                </motion.section>
-
-                {/* Wofür wird gespendet? */}
-                <motion.section
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-                        Wofür wird deine Spende genutzt?
-                    </h2>
-                    <p className="text-gray-800 text-lg leading-relaxed">
-                        Mit den Spenden finanzieren wir Trainingsausrüstung, Fahrten zu Wettkämpfen, Nachwuchsprogramme und Trainerkosten.
-                        So schaffen wir die besten Voraussetzungen für unsere Sportlerinnen und Sportler!
-                    </p>
-                </motion.section>
-
-                {/* Bild als visuelles Highlight */}
-                <motion.section
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate="visible"
-                    className="relative w-full h-80 md:h-96 rounded-lg shadow-xl overflow-hidden"
-                >
-                    <Image
-                        src="/dontation.png"
-                        alt="Spenden"
-                        layout="fill"
-                        objectFit="cover"
-                        priority={true}
-                    />
-                </motion.section>
-
-                {/* Spenden-Button */}
-                <motion.section
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate="visible"
-                    className="text-center"
-                >
-                    <Link href="https://buy.stripe.com/test_4gw17j23c7yW9C85kk" passHref>
+                    <Link href="https://buy.stripe.com/test_dR6bLX7nwaL85lS8wx" passHref>
                         <Button
                             size="lg"
-                            aria-label="Jetzt spenden"
-                            className="bg-lakers text-black hover:bg-yellow-300 transition-all duration-300 px-8 py-3 shadow-lg"
+                            aria-label="Spenden für soziale Projekte"
+                            className="bg-lakers text-black hover:bg-yellow-300 transition-all duration-300 px-8 py-3 shadow-lg uppercase "
                         >
-                            Jetzt unterstützen
+                           jetzt spenden
                         </Button>
                     </Link>
-                    <Link href="https://buy.stripe.com/test_4gw17j23c7yW9C85kk" passHref>
-                        <Button
-                            size="lg"
-                            aria-label="Jetzt spenden"
-                            className="bg-lakers text-black hover:bg-yellow-300 transition-all duration-300 px-8 py-3 shadow-lg"
-                        >
-                            An verein Spenden
-                        </Button>
-                    </Link>
-                </motion.section>
-
-                {/* Erfolge & Vertrauen */}
-                <motion.section
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate="visible"
-                    className="bg-lakers p-6 rounded-lg shadow-md"
-                >
-                    <h3 className="text-2xl font-semibold text-gray-700 mb-2">
-                        Unsere Erfolge
-                    </h3>
-                    <p className="text-gray-600 text-base">
-                        Dank eurer Unterstützung konnten wir in den letzten Jahren große Meilensteine erreichen:
-                    </p>
-                    <ul className="mt-4 list-disc list-inside text-gray-600">
-                        <li>Über 200 geförderte Nachwuchs-Ringer</li>
-                        <li>30+ Medaillen bei nationalen Wettkämpfen</li>
-                        <li>Neue Trainingsausrüstung für unser Team</li>
-                    </ul>
-                </motion.section>
-            </main>
+                </div>
+            </motion.div>
         </div>
     );
 };
 
-export default Page;
+export default DonationSections;

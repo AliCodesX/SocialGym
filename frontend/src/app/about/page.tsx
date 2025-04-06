@@ -1,10 +1,8 @@
 'use client'
 import React from 'react'
-import HeroAbout from "@/app/Components/AboutHero";
 import Image from "next/image";
-import CardGridItemCoach from "@/app/Components/CardGridItem";
 import { motion } from "framer-motion";
-
+import Hero from "@/app/Components/Hero";
 const fadeUpVariant = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -18,51 +16,17 @@ const fadeUpVariant = {
 };
 
 const Page = () => {
-
-    const CardTrainerData = [
-        {
-            image: "/coach1.jpg",
-            title: "Trainer 1",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum",
-            email: "qZ9dA@example.com",
-            telefone: "123456789"
-        },
-        {
-            image: "/coach2.jpeg",
-            title: "Trainer 2",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum",
-            email: "qZ9dA@example.com",
-            telefone: "123456789"
-        },
-        {
-            image: "/coach3.jpg",
-            title: "Trainer 3",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum",
-            email: "qZ9dA@example.com",
-            telefone: "123456789"
-        },
-        {
-            image: "/coach4.jpg",
-            title: "Trainer 4",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque, dolore dolorem earum",
-            email: "qZ9dA@example.com",
-            telefone: "123456789"
-        }
-    ];
-
-
-
     return (
         <div>
-            <motion.div
+
+                <motion.div
                 variants={fadeUpVariant}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{once: true, amount: 0.3}}
             >
-                <HeroAbout title="Über Uns"/>
+                <Hero/>
             </motion.div>
-
             <motion.div
                 variants={fadeUpVariant}
                 initial="hidden"
@@ -97,16 +61,7 @@ const Page = () => {
                 </div>
             </motion.div>
 
-            <motion.div
-                variants={fadeUpVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                className="relative flex flex-col items-center text-center mt-20"
-            >
-                <h1 className="text-4xl font-bold mb-4">Unser Trainerteam</h1>
-                <CardGridItemCoach items={CardTrainerData}/>
-            </motion.div>
+
 
             <motion.div
                 variants={fadeUpVariant}

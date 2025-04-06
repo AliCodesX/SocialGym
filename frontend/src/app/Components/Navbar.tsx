@@ -22,10 +22,12 @@ export const InsanLogo = () => (
 
 const NavigationMenuItems = [
     { label: "Home", href: "/" },
-    { label: "Kontakt", href: "/contact" },
-    { label: "Spenden", href: "/donate" },
     {label: "Projekte", href: "/projects"},
     { label: "SocialGym", href: "/about" },
+    {label: "SocialBridge", href: "/socialbridge"},
+    { label: "Kontakt", href: "/contact" },
+    { label: "Mitgliedschaft", href: "/subscriptions" },
+    { label: "Spenden", href: "/donate" },
 ];
 
 export default function NavbarComponent() {
@@ -72,9 +74,7 @@ export default function NavbarComponent() {
 
             <NavbarContent justify="end">
                 <NavbarItem>
-                    <Button as={Link} className="bg-navgray font-bold text-white drop-shadow-md" href="/subscriptions" variant="flat">
-                     Mitgliedschaft
-                    </Button>
+
                 </NavbarItem>
             </NavbarContent>
 

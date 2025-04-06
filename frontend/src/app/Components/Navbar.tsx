@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -13,7 +13,6 @@ import {
     NavbarMenu,
     NavbarMenuItem,
     Link,
-    Button,
 } from "@heroui/react";
 
 export const InsanLogo = () => (
@@ -22,30 +21,33 @@ export const InsanLogo = () => (
 
 const NavigationMenuItems = [
     { label: "Home", href: "/" },
-    {label: "Projekte", href: "/projects"},
+    { label: "Projekte", href: "/projects" },
     { label: "SocialGym", href: "/about" },
-    {label: "SocialBridge", href: "/socialbridge"},
+    { label: "SocialBridge", href: "/socialbridge" },
     { label: "Kontakt", href: "/contact" },
     { label: "Mitgliedschaft", href: "/subscriptions" },
     { label: "Spenden", href: "/donate" },
 ];
 
 export default function NavbarComponent() {
-    const pathname = usePathname(); // Holt die aktuelle URL aus Next.js
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Zustand für das Menü
+    const pathname = usePathname();
+
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen); // Toggle für das Menü
 
     return (
         <Navbar className="bg-[#a0c8e3] p-3.5 text-black">
+            {/* Linkes Logo */}
             <NavbarContent>
-                <NavbarMenuToggle aria-label="Toggle menu" className="sm:hidden" />
                 <NavbarBrand>
                     <InsanLogo />
                 </NavbarBrand>
             </NavbarContent>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation (zentriert) */}
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 {NavigationMenuItems.map((item) => {
-                    const isActive = pathname === item.href
+                    const isActive = pathname === item.href;
 
                     return (
                         <NavbarItem key={item.href} className="relative">
@@ -72,22 +74,32 @@ export default function NavbarComponent() {
                 })}
             </NavbarContent>
 
+            {/* Rechtes Menü für Toggle */}
             <NavbarContent justify="end">
-                <NavbarItem>
-
+                <NavbarItem className="sm:hidden">
+                    <NavbarMenuToggle
+                        aria-label="Toggle menu"
+                        onClick={toggleMenu}
+                        className="w-10 h-10 flex justify-center items-center"
+                    />
                 </NavbarItem>
             </NavbarContent>
 
             {/* Mobile Menu */}
-            <NavbarMenu className=" bg-[#a0c8e3] mt-3 text-navgray ">
-                {NavigationMenuItems.map((item) => (
-                    <NavbarMenuItem className="border-b border-navgray last:border-b-0 font-bold p-2" key={item.href}>
-                        <Link color="foreground" href={item.href}>
-                            {item.label}
-                        </Link>
-                    </NavbarMenuItem>
-                ))}
-            </NavbarMenu>
+            {isMenuOpen && (
+                <NavbarMenu className="bg-[#a0c8e3] mt-3 text-navgray">
+                    {NavigationMenuItems.map((item) => (
+                        <NavbarMenuItem
+                            className="border-b border-navgray last:border-b-0 font-bold p-2"
+                            key={item.href}
+                        >
+                            <Link color="foreground" href={item.href}>
+                                {item.label}
+                            </Link>
+                        </NavbarMenuItem>
+                    ))}
+                </NavbarMenu>
+            )}
         </Navbar>
     );
 }

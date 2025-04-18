@@ -32,13 +32,13 @@ const DonationSections = () => {
                 <div className="max-w-xl text-center md:text-left">
                     <h3 className="text-3xl font-bold mb-4">Spenden für den Verein</h3>
                     <p className="text-lg mb-6">
-                        Unterstütze unseren Ringerverein und hilf uns, Trainingsausrüstung, Wettkampfvorbereitung und Nachwuchsförderung zu finanzieren.
+                        Unterstütze unseren Verein und hilf uns, Trainingsausrüstung, Wettkampfvorbereitung und Nachwuchsförderung zu finanzieren.
                     </p>
                     <Link href="https://buy.stripe.com/test_4gw17j23c7yW9C85kk" passHref>
                         <Button
                             size="lg"
                             aria-label="Spenden für den Verein"
-                            className="bg-lakers uppercase text-black hover:bg-yellow-300 transition-all duration-300 px-8 py-3 shadow-lg"
+                            className="bg-lakers uppercase text-white transition-all duration-300 px-8 py-7 rounded-3xl shadow-lg"
                         >
                             jetzt spenden
                         </Button>
@@ -71,10 +71,10 @@ const DonationSections = () => {
                     <Link href="https://buy.stripe.com/test_dR6bLX7nwaL85lS8wx" passHref>
                         <Button
                             size="lg"
-                            aria-label="Spenden für soziale Projekte"
-                            className="bg-lakers text-black hover:bg-yellow-300 transition-all duration-300 px-8 py-3 shadow-lg uppercase "
+                            aria-label="Spenden für den Verein"
+                            className="bg-lakers uppercase text-white transition-all duration-300 px-8 py-7 rounded-3xl shadow-lg"
                         >
-                           jetzt spenden
+                            jetzt spenden
                         </Button>
                     </Link>
                 </div>

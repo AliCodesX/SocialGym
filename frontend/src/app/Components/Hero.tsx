@@ -2,13 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
-import {Button} from "@heroui/react";
-import {FaArrowRightLong} from "react-icons/fa6";
-
-export interface HomeProps {
-    image ?: string
-    title ?: string
-}
 
 
 const Hero = () => {
@@ -22,7 +15,7 @@ const Hero = () => {
                 quality={100}
                 className="absolute inset-0 -z-10"
             />
-            <h1 className="text-4xl md:text-6xl font-bold text-lakers text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
                 <Typewriter
                     words={["Wilkommen im SocialGym", "Fühle die Aktion!", "Trete uns bei!"]}
                     loop={true}

@@ -6,6 +6,7 @@ import Hero from "@/app/Components/Hero";
 import Link from "next/link";
 import { Button } from "@heroui/react";
 import Maps from "@/app/Components/Maps";
+import {FaArrowRightLong} from "react-icons/fa6";
 
 const fadeUpVariant = {
     hidden: { opacity: 0, y: 50 },
@@ -66,11 +67,14 @@ const Page = () => {
                         <br/><br/>
                         Hast du Fragen oder möchtest mehr erfahren? Wir freuen uns, von dir zu hören.
                     </p>
-                    <Link href="/subscriptions">
-                        <Button className="py-4 px-10 bg-lakers text-black uppercase">
-                            Jetzt beitreten
-                        </Button>
-                    </Link>
+                        <motion.div whileHover={{y: -5}}>
+                            <Link href= "/subscriptions">
+                                <Button endContent={<FaArrowRightLong/>}
+                                        className="py-8 px-8 bg-lakers text-white rounded-3xl uppercase">
+                                    Mitglied werden
+                                </Button>
+                            </Link>
+                        </motion.div>
                 </div>
             </motion.div>
 
@@ -82,6 +86,7 @@ const Page = () => {
                 className="flex justify-center bg-navgray mt-20 py-16"
             >
                 <div
+                    id="trainingszeiten"
                     className="flex flex-col md:flex-row gap-10 text-white justify-center items-center md:items-start max-w-[1200px] w-full p-10 rounded-lg">
                     <div className="flex justify-center items-center">
                         <h1 className="text-4xl font-bold text-center">Unsere Philosophie</h1>
@@ -123,6 +128,7 @@ const Page = () => {
             </motion.div>
 
             <motion.div
+
                 variants={fadeUpVariant}
                 initial="hidden"
                 whileInView="visible"
@@ -155,7 +161,9 @@ const Page = () => {
                 viewport={{once: true, amount: 0.2}}
                 className="flex justify-center bg-white py-16"
             >
-                <div className="max-w-[1200px] w-full p-10 rounded-lg">
+                <div
+
+                    className="max-w-[1200px] w-full p-10 rounded-lg">
                     <h1 className="text-4xl font-bold text-center mb-8">Trainingszeiten</h1>
                     <div className="overflow-x-auto">
                         <table className="min-w-full table-fixed border-collapse">

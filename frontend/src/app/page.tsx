@@ -29,7 +29,7 @@ export default function Home() {
             >
                 <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative flex flex-col justify-center items-start p-10 max-w-[1200px] w-full text-white gap-6">
-                    <h1 className="text-3xl md:text-5xl font-bold text-lakers ">Wir sind Social-Insan!</h1>
+                    <h1 className="text-3xl md:text-5xl font-bold text-white ">Wir sind Social-Insan!</h1>
                     <p className="text-lg md:text-2xl font-medium">
                         Sport. Integration. Menschlichkeit. <br />
                         Wir fördern junge Menschen durch Ringen, Bildung & interkulturellen Dialog.
@@ -37,7 +37,7 @@ export default function Home() {
                     <div className="flex gap-4 flex-col md:flex-row ">
                         <motion.div whileHover={{ y: -5 }}>
                             <Link href="#mitglied">
-                                <Button endContent={<FaArrowRightLong />} className="py-8 px-10 bg-lakers text-black rounded-3xl uppercase">
+                                <Button endContent={<FaArrowRightLong />} className="py-8 px-10 bg-white text-lakers rounded-3xl uppercase">
                                     Mitglied werden
                                 </Button>
                             </Link>

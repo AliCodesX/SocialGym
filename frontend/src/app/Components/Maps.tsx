@@ -77,17 +77,17 @@ const Maps = () => {
         );
     };
     return (
-        <div className="w-full px-4 py-8 flex flex-col items-center gap-6 ">
-            <div className="w-full max-w-3xl flex flex-col sm:flex-row items-center gap-4">
+        <div className="w-full px-4 py-8 flex flex-col items-center gap-6  ">
+            <div className="w-full flex flex-col sm:flex-row items-center gap-4">
                 <Input
                     ref={inputRef}
                     type="text"
                     placeholder="Startadresse eingeben"
-                    className="flex-1 w-full px-4 py-3 border  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 w-full px-4 py-3 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <Button
                     onPress={handleRoute}
-                    className="px-5 py-3 bg-lakers text-black rounded-md shadow transition"
+                    className="px-5 py-3 bg-lakers text-white rounded-3xl shadow transition"
                 >
                     Route anzeigen
                 </Button>

@@ -31,7 +31,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        lakers: "#FDB927",
+        lakers: "#010d1e",
         navgray: "#000d1e",
       },
     },

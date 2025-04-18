@@ -80,17 +80,17 @@ const Footer = () => {
                     {/* Social Media Icons */}
                     <div className="flex justify-center items-center space-x-6">
                         <motion.a href="" target="_blank" rel="noopener noreferrer" aria-label="TikTok"
-                                  className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
+                                  className="text-2xl hover:text-[#a0c8e3]" {...hoverAnimation}>
                             <FaTiktok/>
                         </motion.a>
                         <motion.a href="https://www.instagram.com/socialgym.hamburg/" target="_blank"
                                   rel="noopener noreferrer" aria-label="Instagram"
-                                  className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
+                                  className="text-2xl hover:text-[#a0c8e3]" {...hoverAnimation}>
                             <FaInstagram/>
                         </motion.a>
                         <motion.a href="https://www.linkedin.com/in/fahim-afshar-8412b51b3/?originalSubdomain=de"
                                   target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-                                  className="text-2xl hover:text-[#FDB927]" {...hoverAnimation}>
+                                  className="text-2xl hover:text-[#a0c8e3]" {...hoverAnimation}>
                             <FaLinkedin/>
                         </motion.a>
                     </div>
@@ -105,20 +105,20 @@ const Footer = () => {
                 <div className="mt-6 text-center">
                     <div
                         className="flex flex-row flex-wrap text-sm justify-center items-center space-x-6 sm:space-x-8 text-white">
-                        <motion.a href="/impressum" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Impresum
+                        <motion.a href="/impressum" className="hover:text-[#a0c8e3]  p-1" {...hoverAnimation}>Impresum
                         </motion.a>
                         <motion.a href="/datenschutz"
-                                  className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Datenschutz
+                                  className="hover:text-[#a0c8e3]  p-1" {...hoverAnimation}>Datenschutz
                         </motion.a>
-                        <motion.a href="/agb" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>AGB</motion.a>
+                        <motion.a href="/agb" className="hover:text-[#a0c8e3]  p-1" {...hoverAnimation}>AGB</motion.a>
                         <motion.a href="/vereinssatzung"
-                                  className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Vereinssatzung
+                                  className="hover:text-[#a0c8e3]  p-1" {...hoverAnimation}>Vereinssatzung
                         </motion.a>
-                        <motion.a href="/cancel" className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Mitgliedschaft
+                        <motion.a href="/cancel" className="hover:text-[#a0c8e3] p-1" {...hoverAnimation}>Mitgliedschaft
                             kündigen
                         </motion.a>
                         <motion.a href="/revocation"
-                                  className="hover:text-[#FDB927] p-1" {...hoverAnimation}>Widerrufsbelehrung
+                                  className="hover:text-[#a0c8e3]  p-1" {...hoverAnimation}>Widerrufsbelehrung
                         </motion.a>
                     </div>
                 </div>

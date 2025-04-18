@@ -114,7 +114,7 @@ export default function Page() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{once: true, amount: 0.2}}
-                className="relative flex flex-col items-center text-center mt-20"
+                className="relative flex flex-col items-center text-center mt-10 p-4"
             >
                 <h1 className="text-4xl font-bold mb-4">Unser Vorstand</h1>
                 <CardGridItemCoach items={CardPresidentData}/>

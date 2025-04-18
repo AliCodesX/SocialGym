@@ -108,7 +108,7 @@ const Page = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{once: true, amount: 0.2}}
-                className="flex justify-center bg-gradient-to-r from-yellow-500 to-yellow-400 py-16"
+                className="flex justify-center bg-[#a0c8e3] py-16"
             >
                 <div
                     className="flex flex-col md:flex-row gap-10 justify-center items-center text-black md:items-start max-w-[1200px] w-full p-10 rounded-lg">

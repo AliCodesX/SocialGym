@@ -86,7 +86,6 @@ const Page = () => {
                 className="flex justify-center bg-navgray mt-20 py-16"
             >
                 <div
-                    id="trainingszeiten"
                     className="flex flex-col md:flex-row gap-10 text-white justify-center items-center md:items-start max-w-[1200px] w-full p-10 rounded-lg">
                     <div className="flex justify-center items-center">
                         <h1 className="text-4xl font-bold text-center">Unsere Philosophie</h1>
@@ -160,6 +159,7 @@ const Page = () => {
                 whileInView="visible"
                 viewport={{once: true, amount: 0.2}}
                 className="flex justify-center bg-white py-16"
+                id="trainingszeiten"
             >
                 <div
 

@@ -1,19 +1,22 @@
-import { Roboto, Russo_One } from "next/font/google";
+// app/layout.tsx
+import { Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 
-const russo = Russo_One({
+// Montserrat für Überschriften
+const montserrat = Montserrat({
     subsets: ["latin"],
-    weight: ["400"],
-    variable: "--font-headings",
+    weight: ["400", "500", "600", "700", "800", "900"],
     display: "swap",
+    variable: "--font-headings",
 });
 
+// Roboto für Fließtext
 const roboto = Roboto({
     subsets: ["latin"],
-    weight: ["300", "400", "700"],
-    variable: "--font-body",
+    weight: ["300", "400", "500", "700"],
     display: "swap",
+    variable: "--font-body",
 });
 
 export default function RootLayout({
@@ -22,8 +25,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className={`${russo.variable} ${roboto.variable}`}>
-        <body className="antialiased">
+        <html
+            lang="de"
+            className={`${montserrat.variable} ${roboto.variable}`}
+        >
+        <body className="antialiased font-body">
         <Providers>{children}</Providers>
         </body>
         </html>

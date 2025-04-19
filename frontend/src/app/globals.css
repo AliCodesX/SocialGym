@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+    /* Stelle sicher, dass font-body auf html/body greift */
     html {
         font-family: var(--font-body);
     }
     body {
         scroll-behavior: smooth;
+        /* (font-family über font-body-Utility oder hier setzen) */
     }
-    h1, h2, h3, .heading {
+
+    /* Überschriften global auf Montserrat drehen */
+    h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-headings);
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
     }
 }

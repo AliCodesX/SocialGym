@@ -1,22 +1,23 @@
 import type { Config } from "tailwindcss";
-import {heroui} from "@heroui/react";
-const colors = require("tailwindcss/colors");
+import { heroui } from "@heroui/react";
+import defaultTheme from "tailwindcss/defaultTheme";
 
-
-
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
 /** @type {import('tailwindcss').Config} */
-export default {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}"
+    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
+      // ---- hier hinzufügen ----
+      fontFamily: {
+        // Nutzt deine CSS‑Variable --font-body (Roboto) als erstes
+        sans: ["var(--font-body)", ...defaultTheme.fontFamily.sans],
+        headings: ["var(--font-headings)", ...defaultTheme.fontFamily.sans],
+      },
       animation: {
         scroll:
             "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
@@ -38,5 +39,6 @@ export default {
   },
   darkMode: "class",
   plugins: [heroui()],
-} satisfies Config;
+};
 
+export default config;

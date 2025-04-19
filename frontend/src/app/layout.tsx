@@ -1,50 +1,30 @@
-'use client'
-import { Oswald, Poppins } from "next/font/google";
-import { HeroUIProvider } from "@heroui/react";
-import { ToastProvider } from "@heroui/toast";
-import { motion, useScroll } from "framer-motion";
-
+import { Roboto, Russo_One } from "next/font/google";
 import "./globals.css";
-import NavbarComponent from "@/app/Components/Navbar";
-import Footer from "@/app/Components/Footer";
+import Providers from "./providers";
 
-const oswald = Oswald({
-    variable: "--font-oswald",
+const russo = Russo_One({
     subsets: ["latin"],
-    weight: ["400", "700"], // Für normale & fette Titel
+    weight: ["400"],
+    variable: "--font-headings",
+    display: "swap",
 });
 
-const poppins = Poppins({
-    variable: "--font-poppins",
+const roboto = Roboto({
     subsets: ["latin"],
-    weight: ["300", "400", "600"], // Für verschiedene Textgrößen
+    weight: ["300", "400", "700"],
+    variable: "--font-body",
+    display: "swap",
 });
 
-// ScrollProgress-Komponente, die den Fortschritt des Scrollens anzeigt
-function ScrollProgress() {
-    const { scrollYProgress } = useScroll();
+export default function RootLayout({
+                                       children,
+                                   }: {
+    children: React.ReactNode;
+}) {
     return (
-        <motion.div
-            className="fixed top-0 left-0 right-0 h-1 bg-navgray origin-left z-50"
-            style={{ scaleX: scrollYProgress }}
-        />
-    );
-}
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-    return (
-        <html lang="en">
-        <body className={`${oswald.variable} ${poppins.variable} antialiased `}>
-        <HeroUIProvider>
-            <ToastProvider placement="top-right" />
-            {/* ScrollProgress-Komponente einfügen */}
-            <ScrollProgress />
-            <div className="flex flex-col min-h-screen">
-                <NavbarComponent />
-                <main className="flex-grow ">{children}</main>
-                <Footer />
-            </div>
-        </HeroUIProvider>
+        <html lang="en" className={`${russo.variable} ${roboto.variable}`}>
+        <body className="antialiased">
+        <Providers>{children}</Providers>
         </body>
         </html>
     );

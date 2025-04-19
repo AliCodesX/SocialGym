@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    scroll-behavior: smooth;
+@layer base {
+    html {
+        font-family: var(--font-body);
+    }
+    body {
+        scroll-behavior: smooth;
+    }
+    h1, h2, h3, .heading {
+        font-family: var(--font-headings);
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
 }
